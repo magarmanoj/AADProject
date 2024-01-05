@@ -1,0 +1,36 @@
+﻿<Window x:Class="AAD.ImmoWin.WpfApp.Views.HoofdView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AAD.ImmoWin.WpfApp"
+        xmlns:views="clr-namespace:AAD.ImmoWin.WpfApp.Views"
+        xmlns:viewmodels="clr-namespace:AAD.ImmoWin.WpfApp.ViewModels"
+        mc:Ignorable="d"
+        Title="{Binding Title}" Height="450" Width="800"
+		  IsEnabled="{Binding IsEnabled}"
+		  >
+    <Window.DataContext>
+        <viewmodels:HoofdViewModel></viewmodels:HoofdViewModel>
+    </Window.DataContext>
+    <DockPanel>
+
+        <Menu DockPanel.Dock="Top" IsMainMenu="True">
+            <MenuItem Header="_Bestand">
+                <MenuItem Header="E_xit" Command="{Binding ExitCommand}"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Gegevens">
+                <MenuItem Header="_Klanten module" Command="{Binding KlantenModuleCommand}"></MenuItem>
+                <MenuItem Header="_Appartment module" Command="{Binding AppartementModuleCommand}"></MenuItem>
+                <MenuItem Header="_Huis module" Command="{Binding HuisModuleCommand}"></MenuItem>
+            </MenuItem>
+        </Menu>
+
+        <StatusBar DockPanel.Dock="Bottom">
+            <Label Content="{Binding Status}" Margin="5"></Label>
+        </StatusBar>
+
+        <ContentControl Content="{Binding HuidigeModuleViewModel}"></ContentControl>
+
+    </DockPanel>
+</Window>

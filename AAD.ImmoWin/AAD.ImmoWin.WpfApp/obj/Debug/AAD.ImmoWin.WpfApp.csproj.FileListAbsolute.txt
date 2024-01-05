@@ -1,0 +1,83 @@
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\bin\Debug\AAD.ImmoWin.WpfApp.exe.config
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\bin\Debug\AAD.ImmoWin.WpfApp.exe
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\bin\Debug\AAD.ImmoWin.WpfApp.pdb
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\bin\Debug\AAD.ImmoWin.Business.dll
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\bin\Debug\Odisee.Common.dll
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\bin\Debug\AAD.ImmoWin.Business.pdb
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\bin\Debug\Odisee.Common.pdb
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\AAD.ImmoWin.WpfApp.csproj.AssemblyReference.cache
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\AAD.ImmoWin.WpfApp.csproj.SuggestedBindingRedirects.cache
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\HoofdView.g.cs
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\App.g.cs
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\AAD.ImmoWin.WpfApp_MarkupCompile.cache
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\AAD.ImmoWin.WpfApp_MarkupCompile.lref
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\HoofdView.baml
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\AAD.ImmoWin.WpfApp.g.resources
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\AAD.ImmoWin.WpfApp.Properties.Resources.resources
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\AAD.ImmoWin.WpfApp.csproj.GenerateResource.cache
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\AAD.ImmoWin.WpfApp.csproj.CoreCompileInputs.cache
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\AAD.ImmoWin.WpfApp.csproj.CopyComplete
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\AAD.ImmoWin.WpfApp.exe
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\AAD.ImmoWin.WpfApp.pdb
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\KlantenModuleView.g.cs
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\KlantenModuleView.baml
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\KlantDetailCommandView.g.cs
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\KlantDetailView.g.cs
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\KlantenLijstView.g.cs
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\KlantDetailCommandView.baml
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\KlantDetailView.baml
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\KlantenLijstView.baml
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\App.baml
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\bin\Debug\AAD.ImmoWin.WpfApp.exe.config
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\bin\Debug\AAD.ImmoWin.WpfApp.exe
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\bin\Debug\AAD.ImmoWin.WpfApp.pdb
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\bin\Debug\AAD.ImmoWin.Business.dll
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\bin\Debug\Odisee.Common.dll
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\bin\Debug\AAD.ImmoWin.Business.pdb
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\bin\Debug\Odisee.Common.pdb
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\AAD.ImmoWin.WpfApp.csproj.AssemblyReference.cache
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\HoofdView.g.cs
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\KlantDetailCommandView.g.cs
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\KlantDetailView.g.cs
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\KlantenLijstView.g.cs
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\KlantenModuleView.g.cs
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\App.g.cs
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\AAD.ImmoWin.WpfApp_MarkupCompile.cache
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\AAD.ImmoWin.WpfApp_MarkupCompile.lref
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\App.baml
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\HoofdView.baml
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\KlantDetailCommandView.baml
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\KlantDetailView.baml
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\KlantenLijstView.baml
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\KlantenModuleView.baml
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\AAD.ImmoWin.WpfApp.g.resources
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\AAD.ImmoWin.WpfApp.Properties.Resources.resources
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\AAD.ImmoWin.WpfApp.csproj.GenerateResource.cache
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\AAD.ImmoWin.WpfApp.csproj.CoreCompileInputs.cache
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\AAD.ImmoWin.WpfApp.csproj.CopyComplete
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\AAD.ImmoWin.WpfApp.exe
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\AAD.ImmoWin.WpfApp.pdb
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\bin\Debug\EntityFramework.dll
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\bin\Debug\AAD.ImmoWin.Business.dll.config
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\bin\Debug\EntityFramework.xml
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\bin\Debug\EntityFramework.SqlServer.dll
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\bin\Debug\Odisee.Common.dll.config
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\bin\Debug\EntityFramework.SqlServer.xml
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\Huizen\HuisAddView.g.cs
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\Huizen\HuisDataView.g.cs
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\Huizen\HuisEditView.g.cs
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\Huizen\HuisView.g.cs
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\Huizen\HuisAddView.baml
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\Huizen\HuisDataView.baml
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\Huizen\HuisEditView.baml
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\Huizen\HuisView.baml
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\Appartemeten\AppartementAddView.g.cs
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\Appartemeten\AppartementDataView.g.cs
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\Appartemeten\AppartementEditView.g.cs
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\Appartemeten\AppartementView.g.cs
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\Appartemeten\AppartementAddView.baml
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\Appartemeten\AppartementDataView.baml
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\Appartemeten\AppartementEditView.baml
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\Views\Appartemeten\AppartementView.baml

@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="AAD.ImmoWin.WpfApp.Views.HuisDataView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AAD.ImmoWin.WpfApp.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical" Margin="5">
+                <Label Content="Verdieping:"></Label>
+                <Label Content="Waarde:"></Label>
+                <Label Content="Straat:"></Label>
+                <Label Content="Nummer:"></Label>
+                <Label Content="Postnummer:"></Label>
+                <Label Content="Gemeente:"></Label>
+                <Label Content="EigenaarVoornaam:" Margin="5"></Label>
+                <Label Content="EigenaarFamilienaam:" Margin="5"></Label>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Margin="5" DataContext="{Binding DataContext, RelativeSource={RelativeSource AncestorType=UserControl}}">
+                <TextBox Text="{Binding Types}" Margin="5" />
+                <TextBox Text="{Binding Waarde}" Margin="5" />
+                <TextBox Text="{Binding Adres.Straat}" Margin="5" />
+                <TextBox Text="{Binding Adres.Nummer}" Margin="5" />
+                <TextBox Text="{Binding Adres.Postnummer}" Margin="5" />
+                <TextBox Text="{Binding Adres.Gemeente}" Margin="5" />
+                <!-- Add other textboxes as needed -->
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

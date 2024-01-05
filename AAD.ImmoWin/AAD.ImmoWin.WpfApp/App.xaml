@@ -1,0 +1,54 @@
+﻿<Application x:Class="AAD.ImmoWin.WpfApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:AAD.ImmoWin.WpfApp"
+             xmlns:views="clr-namespace:AAD.ImmoWin.WpfApp.Views"
+             xmlns:viewmodels="clr-namespace:AAD.ImmoWin.WpfApp.ViewModels"
+             StartupUri="Views/HoofdView.xaml">
+    <Application.Resources>
+
+        <Style x:Key="TitelLabel" TargetType="Label">
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="Background" Value="LightGray"></Setter>
+            <Setter Property="Margin" Value="3"></Setter>
+        </Style>
+
+        <DataTemplate DataType="{x:Type viewmodels:KlantenModuleViewModel}">
+            <views:KlantenModuleView></views:KlantenModuleView>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodels:KlantenLijstViewModel}">
+            <views:KlantenLijstView></views:KlantenLijstView>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodels:KlantDetailCommandViewModel}">
+            <views:KlantDetailCommandView></views:KlantDetailCommandView>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodels:AppartementAddViewModel}">
+            <views:AppartementAddView></views:AppartementAddView>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodels:AppartementEditViewModel}">
+            <views:AppartementEditView></views:AppartementEditView>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodels:AppartementModuleViewModel}">
+            <views:AppartementView></views:AppartementView>
+        </DataTemplate>
+
+
+        <DataTemplate DataType="{x:Type viewmodels:HuisAddViewModel}">
+            <views:HuisAddView></views:HuisAddView>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodels:HuisEditViewModel}">
+            <views:HuisEditView></views:HuisEditView>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodels:HuisModuleViewModel}">
+            <views:HuisView></views:HuisView>
+        </DataTemplate>
+
+    </Application.Resources>
+</Application>

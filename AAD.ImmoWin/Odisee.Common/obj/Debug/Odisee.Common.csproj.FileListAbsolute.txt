@@ -1,0 +1,29 @@
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V05 -\AAD.ImmoWin\Odisee.Common\bin\Debug\Odisee.Common.dll
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V05 -\AAD.ImmoWin\Odisee.Common\bin\Debug\Odisee.Common.pdb
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V05 -\AAD.ImmoWin\Odisee.Common\obj\Debug\Odisee.Common.csproj.CoreCompileInputs.cache
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V05 -\AAD.ImmoWin\Odisee.Common\obj\Debug\Odisee.Common.dll
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V05 -\AAD.ImmoWin\Odisee.Common\obj\Debug\Odisee.Common.pdb
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V05 - FullObservableCollection\AAD.ImmoWin\Odisee.Common\bin\Debug\Odisee.Common.dll
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V05 - FullObservableCollection\AAD.ImmoWin\Odisee.Common\bin\Debug\Odisee.Common.pdb
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V05 - FullObservableCollection\AAD.ImmoWin\Odisee.Common\obj\Debug\Odisee.Common.csproj.AssemblyReference.cache
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V05 - FullObservableCollection\AAD.ImmoWin\Odisee.Common\obj\Debug\Odisee.Common.csproj.CoreCompileInputs.cache
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V05 - FullObservableCollection\AAD.ImmoWin\Odisee.Common\obj\Debug\Odisee.Common.dll
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V05 - FullObservableCollection\AAD.ImmoWin\Odisee.Common\obj\Debug\Odisee.Common.pdb
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\Odisee.Common\bin\Debug\Odisee.Common.dll
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\Odisee.Common\bin\Debug\Odisee.Common.pdb
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\Odisee.Common\obj\Debug\Odisee.Common.csproj.AssemblyReference.cache
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\Odisee.Common\obj\Debug\Odisee.Common.csproj.CoreCompileInputs.cache
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\Odisee.Common\obj\Debug\Odisee.Common.dll
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\Odisee.Common\obj\Debug\Odisee.Common.pdb
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\Odisee.Common\bin\Debug\Odisee.Common.dll
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\Odisee.Common\bin\Debug\Odisee.Common.pdb
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\Odisee.Common\obj\Debug\Odisee.Common.csproj.AssemblyReference.cache
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\Odisee.Common\obj\Debug\Odisee.Common.csproj.CoreCompileInputs.cache
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\Odisee.Common\obj\Debug\Odisee.Common.dll
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\Odisee.Common\obj\Debug\Odisee.Common.pdb
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\Odisee.Common\bin\Debug\Odisee.Common.dll.config
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\Odisee.Common\bin\Debug\EntityFramework.dll
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\Odisee.Common\bin\Debug\EntityFramework.SqlServer.dll
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\Odisee.Common\bin\Debug\EntityFramework.xml
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\Odisee.Common\bin\Debug\EntityFramework.SqlServer.xml
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\Odisee.Common\obj\Debug\Odisee.Common.csproj.CopyComplete
