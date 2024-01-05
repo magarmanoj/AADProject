@@ -59,8 +59,14 @@ namespace AAD.ImmoWin.Business.Classes
         {
             Voornaam = voornaam;
             Familienaam = familienaam;
+            Eigendommen = new Woningen();
             Eigendommen.CollectionChanged += Eigendommen_CollectionChanged;
             Changed = false;
+        }
+
+        public Klant()
+        {
+
         }
 
         private void Eigendommen_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
@@ -126,7 +132,7 @@ namespace AAD.ImmoWin.Business.Classes
             {
                 default:
                 case "T": // typical
-                    result = $"{Familienaam} {Voornaam} #eigendommen: {Eigendommen.Count}";
+                    result = $"{Familienaam} {Voornaam} #eigendommen: {Eigendommen}";
                     break;
                 case "VF": // voornaam familienaam
                     result = $"{Voornaam} {Familienaam}".Trim();
@@ -149,9 +155,5 @@ namespace AAD.ImmoWin.Business.Classes
         #endregion
 
         #endregion
-        public Klant()
-        {
-            _eigendommen = new Woningen();
-        }
     }
 }

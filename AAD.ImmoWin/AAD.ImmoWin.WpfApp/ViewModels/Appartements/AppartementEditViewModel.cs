@@ -3,6 +3,7 @@ using AAD.ImmoWin.Business.Services;
 using Odisee.Common.Commands;
 using Odisee.Common.ViewModels;
 using System;
+using System.Collections.Generic;
 
 namespace AAD.ImmoWin.WpfApp.ViewModels
 {
@@ -22,9 +23,9 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             }
         }
 
-        private Woningen _woning;
+        private List<Appartement> _woning;
 
-        public Woningen Woningen
+        public List<Appartement> Woningen
         {
             get { return _woning; }
             set

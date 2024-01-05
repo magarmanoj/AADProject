@@ -1,4 +1,5 @@
 ﻿using AAD.ImmoWin.Business.Classes;
+using AAD.ImmoWin.Business.Interfaces;
 using AAD.ImmoWin.Business.Services;
 using Odisee.Common.ViewModels;
 using System;
@@ -32,9 +33,9 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         }
 
 
-        private Woningen _huis;
+        private List<Huis> _huis;
 
-        public Woningen Huis
+        public List<Huis> Huis
         {
             get { return _huis; }
             set

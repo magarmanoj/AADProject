@@ -1,6 +1,7 @@
 ﻿using AAD.ImmoWin.Business.Classes;
 using AAD.ImmoWin.Business.Enumerations;
 using AAD.ImmoWin.Business.Exceptions;
+using AAD.ImmoWin.Business.Interfaces;
 using AAD.ImmoWin.Business.Services;
 using Odisee.Common.Commands;
 using Odisee.Common.ViewModels;
@@ -18,9 +19,9 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 
         public List<String> HuisSoort { get; set; }
 
-        private Woningen _huis;
+        private List<Huis> _huis;
 
-        public Woningen Huizen
+        public List<Huis> Huizen
         {
             get { return _huis; }
             set
@@ -29,8 +30,8 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             }
         }
 
-        private Klanten _klant;
-        public Klanten Klanten
+        private List<Klant> _klant;
+        public List<Klant> Klanten
         {
             get
             {
@@ -93,7 +94,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
                 }
             }
         }
-        public HuisAddViewModel(Woningen Huis)
+        public HuisAddViewModel(List<Huis> Huis)
         {
             Title = "Toevoegen Huisen";
             Huizen = Huis;
@@ -141,13 +142,6 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             set { SetProperty(ref _waarde, value); }
         }
 
-        private Huistype _type;
-        public Huistype Types
-        {
-            get { return _type; }
-            set { SetProperty(ref _type, value); }
-        }
-
         private Klant _eigenaar;
         public Klant Eigenaar
         {
@@ -160,9 +154,11 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         public void HuisToevoegenCommandExecute()
         {
             Adres adres = new Adres(Straat, Nummer, Postnummer, Gemeente);
+            Huistype? huistype = Enum.TryParse<Huistype>(SelectedType, out Huistype result) ? result : (Huistype?)null;
+
             Huis app = new Huis()
             {
-                Type = Types,
+                Type = huistype?? default,
                 Waarde = Waarde,
                 Adres = adres,
             };

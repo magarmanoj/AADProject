@@ -37,9 +37,9 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 			}
 		}
 
-        private Klanten _klanten;
+        private List<Klant> _klanten;
 
-        public Klanten Klanten
+        public List<Klant> Klanten
         {
             get { return _klanten; }
             set

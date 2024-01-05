@@ -27,9 +27,9 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 
         #region Observable properties
 
-        private Klanten _klanten;
+        private List<Klant> _klanten;
 
-        public Klanten Klanten
+        public List<Klant> Klanten
         {
             get { return _klanten; }
             set
@@ -84,7 +84,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 
         #region Constructors
 
-        public KlantenLijstViewModel(Klanten klanten)
+        public KlantenLijstViewModel(List<Klant> klanten)
         {
             // Observable properties
             Title = "Lijst klanten";
@@ -118,15 +118,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         }
         private void KlantToevoegenCommandExecute()
         {
-            Klant nieuweKlant = new Klant
-            {
-                Voornaam = Voornaam,
-                Familienaam = Familienaam
-            };
-            Klanten.Add(nieuweKlant);
-            KlantenRepository.AddKlant(nieuweKlant);
-            Voornaam = string.Empty;
-            Familienaam = string.Empty;
+
         }
         private Boolean KlantToevoegenCommandCanExecute()
         {

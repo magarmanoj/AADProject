@@ -77,3 +77,21 @@ E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.Imm
 E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.ConsoleApp\bin\Debug\Odisee.Common.dll.config
 E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.ConsoleApp\bin\Debug\EntityFramework.xml
 E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.ConsoleApp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ManojM\Desktop\school\AADProject\AAD.ImmoWin\AAD.ImmoWin.ConsoleApp\obj\Debug\AAD.ImmoWin.ConsoleApp.csproj.AssemblyReference.cache
+C:\Users\ManojM\Desktop\school\AADProject\AAD.ImmoWin\AAD.ImmoWin.ConsoleApp\obj\Debug\AAD.ImmoWin.ConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\ManojM\Desktop\school\AADProject\AAD.ImmoWin\AAD.ImmoWin.ConsoleApp\obj\Debug\AAD.ImmoWin.ConsoleApp.exe
+C:\Users\ManojM\Desktop\school\AADProject\AAD.ImmoWin\AAD.ImmoWin.ConsoleApp\obj\Debug\AAD.ImmoWin.ConsoleApp.pdb
+C:\Users\ManojM\Desktop\school\AADProject\AAD.ImmoWin\AAD.ImmoWin.ConsoleApp\bin\Debug\AAD.ImmoWin.ConsoleApp.exe.config
+C:\Users\ManojM\Desktop\school\AADProject\AAD.ImmoWin\AAD.ImmoWin.ConsoleApp\bin\Debug\AAD.ImmoWin.ConsoleApp.exe
+C:\Users\ManojM\Desktop\school\AADProject\AAD.ImmoWin\AAD.ImmoWin.ConsoleApp\bin\Debug\AAD.ImmoWin.ConsoleApp.pdb
+C:\Users\ManojM\Desktop\school\AADProject\AAD.ImmoWin\AAD.ImmoWin.ConsoleApp\bin\Debug\AAD.ImmoWin.Business.dll
+C:\Users\ManojM\Desktop\school\AADProject\AAD.ImmoWin\AAD.ImmoWin.ConsoleApp\bin\Debug\EntityFramework.dll
+C:\Users\ManojM\Desktop\school\AADProject\AAD.ImmoWin\AAD.ImmoWin.ConsoleApp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ManojM\Desktop\school\AADProject\AAD.ImmoWin\AAD.ImmoWin.ConsoleApp\bin\Debug\Odisee.Common.dll
+C:\Users\ManojM\Desktop\school\AADProject\AAD.ImmoWin\AAD.ImmoWin.ConsoleApp\bin\Debug\AAD.ImmoWin.Business.pdb
+C:\Users\ManojM\Desktop\school\AADProject\AAD.ImmoWin\AAD.ImmoWin.ConsoleApp\bin\Debug\AAD.ImmoWin.Business.dll.config
+C:\Users\ManojM\Desktop\school\AADProject\AAD.ImmoWin\AAD.ImmoWin.ConsoleApp\bin\Debug\Odisee.Common.pdb
+C:\Users\ManojM\Desktop\school\AADProject\AAD.ImmoWin\AAD.ImmoWin.ConsoleApp\bin\Debug\Odisee.Common.dll.config
+C:\Users\ManojM\Desktop\school\AADProject\AAD.ImmoWin\AAD.ImmoWin.ConsoleApp\bin\Debug\EntityFramework.xml
+C:\Users\ManojM\Desktop\school\AADProject\AAD.ImmoWin\AAD.ImmoWin.ConsoleApp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ManojM\Desktop\school\AADProject\AAD.ImmoWin\AAD.ImmoWin.ConsoleApp\obj\Debug\AAD.ImmoWin.ConsoleApp.csproj.CopyComplete

@@ -1,9 +1,11 @@
 ﻿using AAD.ImmoWin.Business.Classes;
 using AAD.ImmoWin.Business.Exceptions;
+using AAD.ImmoWin.Business.Interfaces;
 using AAD.ImmoWin.Business.Services;
 using Odisee.Common.Commands;
 using Odisee.Common.ViewModels;
 using System;
+using System.Collections.Generic;
 
 namespace AAD.ImmoWin.WpfApp.ViewModels
 {
@@ -15,9 +17,9 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 
 
 
-        private Woningen _appartement;
+        private List<Appartement> _appartement;
 
-        public Woningen Appartementen
+        public List<Appartement> Appartementen
         {
             get { return _appartement; }
             set
@@ -96,11 +98,11 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
                 }
             }
         }
-        public AppartementAddViewModel(Woningen appartement)
+        public AppartementAddViewModel(List<Appartement> appartement)
         {
             Title = "Toevoegen Appartementen";
             Appartementen = appartement;
-            Klanten = KlantenRepository.GetKlanten();
+            //Klanten = KlantenRepository.GetKlanten();
 
             // Commands
             AppartementToevoegenCommand = new RelayCommand(AppartementToevoegenCommandExecute, AppartementToevoegenCommandCanExecute);

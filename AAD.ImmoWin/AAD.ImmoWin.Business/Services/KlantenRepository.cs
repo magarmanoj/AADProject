@@ -16,32 +16,25 @@ namespace AAD.ImmoWin.Business.Services
     {
         private static Klanten _klanten;
         private static Woningen _woningen;
-        public static DataBaseContext context = new DataBaseContext();
+        public static DataBaseContext context { get; set; }
         static KlantenRepository()
         {
-            ConnectionRepository connectionRepository = new ConnectionRepository();
-            connectionRepository.SeedData(context);
+            context = new DataBaseContext();
         }
 
-        public static Klanten GetKlanten()
+        public static List<Klant> GetKlanten()
         {
-            List<Klant> klantList = context.Klanten.ToList();
-            _klanten = new Klanten(klantList);
-            return _klanten;
+            return context.Klanten.ToList();
         }
 
-        public static Woningen GetAppartementen()
+        public static List<Appartement> GetAppartementen()
         {
-            List<Appartement> appartementList = context.Appartementen.ToList();
-            _woningen = new Woningen(appartementList);
-            return _woningen;
+            return context.Appartementen.ToList();
         }
 
-        public static Woningen GetHuizen()
+        public static List<Huis> GetHuizen()
         {
-            List<Huis> appartementList = context.Huizen.ToList();
-            _woningen = new Woningen(appartementList);
-            return _woningen;
+           return context.Huizen.ToList();
         }
 
         #region Woning
