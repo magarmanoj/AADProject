@@ -32,14 +32,12 @@ namespace AAD.ImmoWin.ConsoleApp
 				klant.Eigendommen.Add(woning);
 				Klanten.Add(klant);
                 KlantenRepository.AddKlant(klant);
-                KlantenRepository.AddWoning(woning);
 
                 klant = new Klant("Junior", "Warwinkel");
 				woning = new Appartement(0, new Adres("Stormstraat", 2, 1000, "Brussel"), DateTime.Now, 0);
 				klant.Eigendommen.Add(woning);
 				Klanten.Add(klant);
                 KlantenRepository.AddKlant(klant);
-                KlantenRepository.AddWoning(woning);
 
                 klant = new Klant("Piet", "Pienter");
 				klant.Eigendommen.Add(new Appartement(1, new Adres("Stormstraat", 2, 1000, "Brussel"), DateTime.Now, 0));

@@ -21,8 +21,6 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         public RelayCommand KlantWijzigenCommand { get; set; }
         public RelayCommand KlantVerwijderenCommand { get; set; }
 
-
-
         #endregion
 
         #region Observable properties
@@ -38,6 +36,8 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             }
         }
 
+        public Klant NewKlanten { get; set; } = new Klant();
+
         private Klant _geselecteerdeKlant;
 
         public Klant GeselecteerdeKlant
@@ -49,9 +49,9 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             }
         }
 
-        private KlantLijstStatus _status;
+        private LijstStatus _status;
 
-        public KlantLijstStatus Status
+        public LijstStatus Status
         {
             get { return _status; }
             set
@@ -62,14 +62,14 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
                 {
                     switch (Status)
                     {
-                        case KlantLijstStatus.Tonen:
+                        case LijstStatus.Tonen:
                             IsEnabled = true;
                             break;
-                        case KlantLijstStatus.Toevoegen:
+                        case LijstStatus.Toevoegen:
                             break;
-                        case KlantLijstStatus.Wijzigen:
+                        case LijstStatus.Wijzigen:
                             break;
-                        case KlantLijstStatus.Verwijderen:
+                        case LijstStatus.Verwijderen:
                             break;
                         default:
                             break;
@@ -89,7 +89,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             // Observable properties
             Title = "Lijst klanten";
             Klanten = klanten;
-            Status = KlantLijstStatus.Tonen;
+            Status = LijstStatus.Tonen;
 
             // Commands
             KlantToevoegenCommand = new RelayCommand(KlantToevoegenCommandExecute, KlantToevoegenCommandCanExecute);
@@ -102,23 +102,10 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         #region Methods
 
         #region Command  methods
-        private string _voornaam;
-        public string Voornaam
-        {
-            get { return _voornaam; }
-            set { SetProperty(ref _voornaam, value); }
-        }
-
-        private string _familienaam;
-
-        public string Familienaam
-        {
-            get { return _familienaam; }
-            set { SetProperty(ref _familienaam, value); }
-        }
         private void KlantToevoegenCommandExecute()
         {
-
+            KlantenRepository.AddKlant(NewKlanten);
+            Klanten = KlantenRepository.GetKlanten();
         }
         private Boolean KlantToevoegenCommandCanExecute()
         {
@@ -128,7 +115,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         private void KlantWijzigenCommandExecute()
         {
             IsEnabled = false;
-            Status = KlantLijstStatus.Wijzigen;
+            Status = LijstStatus.Wijzigen;
         }
         private Boolean KlantWijzigenCommandCanExecute()
         {

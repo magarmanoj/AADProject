@@ -65,8 +65,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Enumerations\KlantDetailStatus.cs" />
-    <Compile Include="Enumerations\KlantLijstStatus.cs" />
+    <Compile Include="Enumerations\DetailStatus.cs" />
+    <Compile Include="Enumerations\LijstStatus.cs" />
     <Compile Include="ViewModels\Appartements\AppartementAddViewModel.cs" />
     <Compile Include="ViewModels\Appartements\AppartementEditViewModel.cs" />
     <Compile Include="ViewModels\Appartements\AppartementModuleViewModel.cs" />

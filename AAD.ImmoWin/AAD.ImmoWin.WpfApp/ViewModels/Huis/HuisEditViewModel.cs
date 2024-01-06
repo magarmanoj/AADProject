@@ -70,7 +70,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 
         public void HuisBewarenCommandExecute()
         {
-            KlantenRepository.UpdateWoning(Huizen);
+            KlantenRepository.UpdateWoning(Huizen.Id, Huizen);
         }
         private Boolean HuisBewarenCommandCanExecute()
         {

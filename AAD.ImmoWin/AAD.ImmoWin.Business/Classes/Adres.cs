@@ -20,7 +20,7 @@ namespace AAD.ImmoWin.Business.Classes
         public String Straat
         {
             get { return _straat; }
-            private set
+            set
             {
                 if (String.IsNullOrEmpty(value))
                     throw new StraatLeeg_AdresException();
@@ -30,7 +30,7 @@ namespace AAD.ImmoWin.Business.Classes
         public int Nummer
         {
             get { return _nummer; }
-            private set
+            set
             {
                 if (value <= 0)
                     throw new NummerTeKlein_AdresException();
@@ -40,7 +40,7 @@ namespace AAD.ImmoWin.Business.Classes
         public int Postnummer
         {
             get { return _postnummer; }
-            private set
+            set
             {
                 if (value <= 0)
                     throw new PostnummerTeKlein_AdresException();
@@ -50,7 +50,7 @@ namespace AAD.ImmoWin.Business.Classes
         public String Gemeente
         {
             get { return _gemeente; }
-            private set
+            set
             {
                 if (string.IsNullOrEmpty(value))
                     throw new GemeenteLeeg_AdresException();
@@ -105,8 +105,8 @@ namespace AAD.ImmoWin.Business.Classes
         {
             int result;
             if ((result = Postnummer.CompareTo(other.Postnummer)) == 0)
-                if((result = Gemeente.CompareTo(other.Gemeente)) == 0)
-                    if ((result=Straat.CompareTo(other.Straat)) == 0)
+                if ((result = Gemeente.CompareTo(other.Gemeente)) == 0)
+                    if ((result = Straat.CompareTo(other.Straat)) == 0)
                         result = Nummer.CompareTo(other.Nummer);
             return result;
         }

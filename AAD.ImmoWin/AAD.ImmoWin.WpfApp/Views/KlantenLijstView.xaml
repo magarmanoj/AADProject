@@ -26,9 +26,9 @@
         </UniformGrid>
         <StackPanel Grid.Row="2" Orientation="Vertical" Margin="5">
             <Label Content="Voornaam"></Label>
-            <TextBox Text="{Binding Voornaam, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
+            <TextBox Text="{Binding NewKlanten.Voornaam, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
             <Label Content="Familienaam"></Label>
-            <TextBox Text="{Binding Familienaam, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
+            <TextBox Text="{Binding NewKlanten.Familienaam, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
         </StackPanel>
         <Label Grid.Row="4"></Label>
             

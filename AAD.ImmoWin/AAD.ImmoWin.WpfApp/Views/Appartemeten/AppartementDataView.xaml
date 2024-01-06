@@ -22,17 +22,22 @@
                 <Label Content="Nummer:"></Label>
                 <Label Content="Postnummer:"></Label>
                 <Label Content="Gemeente:"></Label>
-                <Label Content="EigenaarVoornaam:" Margin="5"></Label>
-                <Label Content="EigenaarFamilienaam:" Margin="5"></Label>
+                <Label Content="BouwDatum:"></Label>
+                <Label Content="EigenaarVoornaam:"></Label>
+                <Label Content="EigenaarFamilienaam:"></Label>
             </StackPanel>
-            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Margin="5" DataContext="{Binding DataContext, RelativeSource={RelativeSource AncestorType=UserControl}}">
-                <TextBox Text="{Binding Verdieping}" Margin="5" />
-                <TextBox Text="{Binding Waarde}" Margin="5" />
-                <TextBox Text="{Binding Adres.Straat}" Margin="5" />
-                <TextBox Text="{Binding Adres.Nummer}" Margin="5" />
-                <TextBox Text="{Binding Adres.Postnummer}" Margin="5" />
-                <TextBox Text="{Binding Adres.Gemeente}" Margin="5" />
-                <!-- Add other textboxes as needed -->
+            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Margin="5">
+                <TextBox Text="{Binding Appartement.Verdieping, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
+                <TextBox Text="{Binding Appartement.Waarde, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
+                <TextBox Text="{Binding Appartement.Adres.Straat, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
+                <TextBox Text="{Binding Appartement.Adres.Nummer, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
+                <TextBox Text="{Binding Appartement.Adres.Postnummer, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
+                <TextBox Text="{Binding Appartement.Adres.Gemeente, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
+                <TextBox Text="{Binding Appartement.BouwDatum, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
+                <TextBox Text="{Binding Appartement.BouwDatum, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
+                <TextBox Text="{Binding Appartement.BouwDatum, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
+
+                
             </StackPanel>
         </Grid>
     </Grid>

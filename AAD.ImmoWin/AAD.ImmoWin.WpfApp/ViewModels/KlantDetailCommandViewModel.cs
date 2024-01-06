@@ -33,9 +33,9 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 			}
 		}
 
-		private KlantDetailStatus _status;
+		private DetailStatus _status;
 
-		public KlantDetailStatus Status
+		public DetailStatus Status
 		{
 			get { return _status; }
 			set
@@ -44,14 +44,14 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 				{
 					switch (Status)
 					{
-						case KlantDetailStatus.Tonen:
+						case DetailStatus.Tonen:
 							break;
-						case KlantDetailStatus.Wijzigen:
+						case DetailStatus.Wijzigen:
 							IsEnabled = true;
 							break;
-						case KlantDetailStatus.Bewaren:
+						case DetailStatus.Bewaren:
 							break;
-						case KlantDetailStatus.Annuleren:
+						case DetailStatus.Annuleren:
 							break;
 						default:
 							break;
@@ -72,7 +72,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 			// Observable properties
 			Title = "Klant detailgegevens";
 			IsEnabled = false;
-			Status = KlantDetailStatus.Tonen;
+			Status = DetailStatus.Tonen;
 
 			// Commands
 			KlantWijzigingBewarenCommand = new RelayCommand(KlantWijzigingBewarenCommandExecute, KlantWijzigingBewarenCommandCanExecute);
@@ -89,7 +89,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 		{
 			KlantenRepository.UpdateKlant(Klant);
             IsEnabled = false;
-            Status = KlantDetailStatus.Bewaren;
+            Status = DetailStatus.Bewaren;
         }
 		private Boolean KlantWijzigingBewarenCommandCanExecute()
 		{
@@ -99,7 +99,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 		private void KlantWijzigingAnnulerenCommandExecute()
 		{
 			IsEnabled = false;
-			Status = KlantDetailStatus.Annuleren;
+			Status = DetailStatus.Annuleren;
 		}
 
 		#endregion

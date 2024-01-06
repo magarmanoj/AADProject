@@ -1,4 +1,4 @@
-﻿public enum KlantDetailStatus
+﻿public enum DetailStatus
 {
 	Tonen,
 	Wijzigen,

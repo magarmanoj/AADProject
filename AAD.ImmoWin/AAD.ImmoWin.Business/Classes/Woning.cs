@@ -17,16 +17,6 @@ namespace AAD.ImmoWin.Business.Classes
         private Adres _adres;
         private DateTime? _bouwDatum;
         private Decimal? _waarde;
-        private Klant _eigenaar;
-
-        #endregion
-
-        #region Properties
-        public Klant Eigenaar
-        {
-            get { return _eigenaar; }
-            set { _eigenaar = value; }
-        }
         public Decimal? Waarde
         {
             get { return _waarde; }

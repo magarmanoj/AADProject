@@ -66,9 +66,9 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         }
 
 
-        private KlantLijstStatus _status;
+        private LijstStatus _status;
 
-        public KlantLijstStatus Status
+        public LijstStatus Status
         {
             get { return _status; }
             set
@@ -79,14 +79,14 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
                 {
                     switch (Status)
                     {
-                        case KlantLijstStatus.Tonen:
+                        case LijstStatus.Tonen:
                             IsEnabled = true;
                             break;
-                        case KlantLijstStatus.Toevoegen:
+                        case LijstStatus.Toevoegen:
                             break;
-                        case KlantLijstStatus.Wijzigen:
+                        case LijstStatus.Wijzigen:
                             break;
-                        case KlantLijstStatus.Verwijderen:
+                        case LijstStatus.Verwijderen:
                             break;
                         default:
                             break;
@@ -153,17 +153,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         }
         public void HuisToevoegenCommandExecute()
         {
-            Adres adres = new Adres(Straat, Nummer, Postnummer, Gemeente);
-            Huistype? huistype = Enum.TryParse<Huistype>(SelectedType, out Huistype result) ? result : (Huistype?)null;
 
-            Huis app = new Huis()
-            {
-                Type = huistype?? default,
-                Waarde = Waarde,
-                Adres = adres,
-            };
-            Huizen.Add(app);
-            KlantenRepository.AddWoning(app);
         }
         private Boolean HuisToevoegenCommandCanExecute()
         {
@@ -173,7 +163,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         private void HuisWijzigenCommandExecute()
         {
             IsEnabled = false;
-            Status = KlantLijstStatus.Wijzigen;
+            Status = LijstStatus.Wijzigen;
 
         }
         private Boolean HuisBewarenCommandCanExecute()

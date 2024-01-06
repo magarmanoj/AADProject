@@ -2,6 +2,7 @@
 using AAD.ImmoWin.Business.Exceptions;
 using AAD.ImmoWin.Business.Interfaces;
 using AAD.ImmoWin.Business.Services;
+using AAD.ImmoWin.WpfApp.Views;
 using Odisee.Common.Commands;
 using Odisee.Common.ViewModels;
 using System;
@@ -16,6 +17,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         public RelayCommand AppartementVerwijderenCommand { get; set; }
 
 
+        public Appartement NewAppartement { get; set; } = new Appartement();
 
         private List<Appartement> _appartement;
 
@@ -28,8 +30,9 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             }
         }
 
-        private Klanten _klant;
-        public Klanten Klanten
+
+        private List<Klant> _klant;
+        public List<Klant> Klanten
         {
             get
             {
@@ -52,12 +55,6 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             }
         }
 
-        public int SelectedKlantId
-        {
-            get { return _selectedType?.Id ?? 0; }
-        }
-
-
         private Appartement _geselecteerdeappartement;
 
         public Appartement GeselecteerdeAppartement
@@ -70,9 +67,9 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         }
 
 
-        private KlantLijstStatus _status;
+        private LijstStatus _status;
 
-        public KlantLijstStatus Status
+        public LijstStatus Status
         {
             get { return _status; }
             set
@@ -83,14 +80,14 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
                 {
                     switch (Status)
                     {
-                        case KlantLijstStatus.Tonen:
+                        case LijstStatus.Tonen:
                             IsEnabled = true;
                             break;
-                        case KlantLijstStatus.Toevoegen:
+                        case LijstStatus.Toevoegen:
                             break;
-                        case KlantLijstStatus.Wijzigen:
+                        case LijstStatus.Wijzigen:
                             break;
-                        case KlantLijstStatus.Verwijderen:
+                        case LijstStatus.Verwijderen:
                             break;
                         default:
                             break;
@@ -102,79 +99,25 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         {
             Title = "Toevoegen Appartementen";
             Appartementen = appartement;
-            //Klanten = KlantenRepository.GetKlanten();
+            Klanten = KlantenRepository.GetKlanten();
+
+            NewAppartement = new Appartement
+            {
+                Adres = new Adres()
+            };
 
             // Commands
             AppartementToevoegenCommand = new RelayCommand(AppartementToevoegenCommandExecute, AppartementToevoegenCommandCanExecute);
-            AppartementWijzigenCommand = new RelayCommand(AppartementWijzigenCommandExecute, AppartementBewarenCommandCanExecute);
+            AppartementWijzigenCommand = new RelayCommand(AppartementWijzigenCommandExecute, AppartementWijzigenCommandCanExecute);
             AppartementVerwijderenCommand = new RelayCommand(AppartementVerwijderenCommandExecute, AppartementVerwijderenCommandCanExecute);
         }
 
-        private String _straat;
-        public string Straat
-        {
-            get { return _straat; }
-            set { SetProperty(ref _straat, value); }
-        }
-
-        private int _nummer;
-        public int Nummer
-        {
-            get { return _nummer; }
-            set { SetProperty(ref _nummer, value); }
-        }
-
-        private int _postnummer;
-        public int Postnummer
-        {
-            get { return _postnummer; }
-            set { SetProperty(ref _postnummer, value); }
-        }
-
-        private String _gemeente;
-        public String Gemeente
-        {
-            get { return _gemeente; }
-            set { SetProperty(ref _gemeente, value); }
-        }
-
-
-        private int _verdieping;
-        public int Verdieping
-        {
-            get { return _verdieping; }
-            set { SetProperty(ref _verdieping, value); }
-        }
-
-        private int _waarde;
-        public int Waarde
-        {
-            get { return _waarde; }
-            set { SetProperty(ref _waarde, value); }
-        }
-
-        private Klant _eigenaar;
-        public Klant Eigenaar
-        {
-            get { return _eigenaar; }
-            set
-            {
-                SetProperty(ref _eigenaar, value);
-            }
-        }
         public void AppartementToevoegenCommandExecute()
         {
-            Adres adres = new Adres(Straat, Nummer, Postnummer, Gemeente);
-            Appartement app = new Appartement()
-            {
-                Verdieping = Verdieping,
-                Waarde = Waarde,
-                Adres = adres,
-                Eigenaar = SelectedType
 
-            };
-            Appartementen.Add(app);
-            KlantenRepository.AddWoning(app);
+            KlantenRepository.AddWoning(NewAppartement);
+            Appartementen = KlantenRepository.GetAppartementen();
+
         }
         private Boolean AppartementToevoegenCommandCanExecute()
         {
@@ -184,12 +127,12 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         private void AppartementWijzigenCommandExecute()
         {
             IsEnabled = false;
-            Status = KlantLijstStatus.Wijzigen;
+            Status = LijstStatus.Wijzigen;
 
         }
-        private Boolean AppartementBewarenCommandCanExecute()
+        private Boolean AppartementWijzigenCommandCanExecute()
         {
-            return false;
+            return GeselecteerdeAppartement != null;
 
         }
         private void AppartementVerwijderenCommandExecute()
@@ -199,7 +142,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         }
         private Boolean AppartementVerwijderenCommandCanExecute()
         {
-            return IsEnabled = true;
+            return GeselecteerdeAppartement != null;
         }
     }
 }

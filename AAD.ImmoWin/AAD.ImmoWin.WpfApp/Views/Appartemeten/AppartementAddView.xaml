@@ -17,7 +17,7 @@
 
         </Grid.RowDefinitions>
         <Label Content="{Binding Title}" Style="{StaticResource TitelLabel}"></Label>
-        <ListBox ItemsSource="{Binding Appartementen, Mode=OneWay}" SelectedItem="{Binding GeselecteerdeAppartement}" Margin="5" Grid.Row="1"></ListBox>
+        <ListBox ItemsSource="{Binding Appartementen}" SelectedItem="{Binding GeselecteerdeAppartement}" Margin="5" Grid.Row="1"></ListBox>
         <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
             <Grid>
                 <Grid.RowDefinitions>
@@ -37,15 +37,17 @@
                     <Label Content="Nummer"></Label>
                     <Label Content="Postnummer"></Label>
                     <Label Content="Gemeente"></Label>
+                    <Label Content="BouwDatum"></Label>
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Margin="5">
-                    <TextBox Text="{Binding Verdieping}" Margin="5" />
-                    <TextBox Text="{Binding Waarde}" Margin="5" />
-                    <TextBox Text="{Binding Straat}" Margin="5" />
-                    <TextBox Text="{Binding Nummer}" Margin="5" />
-                    <TextBox Text="{Binding Postnummer}" Margin="5" />
-                    <TextBox Text="{Binding Gemeente}" Margin="5" />
+                    <TextBox Text="{Binding NewAppartement.Verdieping}" Margin="5" />
+                    <TextBox Text="{Binding NewAppartement.Waarde}" Margin="5" />
+                    <TextBox Text="{Binding NewAppartement.Adres.Straat}" Margin="5" />
+                    <TextBox Text="{Binding NewAppartement.Adres.Nummer}" Margin="5" />
+                    <TextBox Text="{Binding NewAppartement.Adres.Postnummer}" Margin="5" />
+                    <TextBox Text="{Binding NewAppartement.Adres.Gemeente}" Margin="5" />
+                    <DatePicker SelectedDate="{Binding NewAppartement.BouwDatum}" Margin="5" />
                 </StackPanel>
             </Grid>
         </ScrollViewer>

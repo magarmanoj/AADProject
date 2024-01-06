@@ -12,9 +12,10 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         public RelayCommand AppartementBewarenCommand { get; set; }
         public RelayCommand AppartementAnnulerenCommand { get; set; }
 
+
         private Appartement _appartement;
 
-        public Appartement Appartementen
+        public Appartement Appartement
         {
             get { return _appartement; }
             set
@@ -23,36 +24,45 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             }
         }
 
-        private List<Appartement> _woning;
+        private List<Appartement> _appartementen;
 
-        public List<Appartement> Woningen
+        public List<Appartement> Appartementen
         {
-            get { return _woning; }
+            get { return _appartementen; }
             set
             {
-                SetProperty(ref _woning, value);
+                if (_appartementen != value)
+                {
+                    _appartementen = value;
+                    OnPropertyChanged(nameof(Appartementen));
+                }
             }
         }
 
+        private DetailStatus _status;
 
-        private Adres _adres;
-
-        public Adres Adres
+        public DetailStatus Status
         {
-            get { return _adres; }
+            get { return _status; }
             set
             {
-                SetProperty(ref _adres, value);
-            }
-        }
-        private Appartement _geselecteerdeappartement;
-
-        public Appartement GeselecteerdeAppartement
-        {
-            get { return _geselecteerdeappartement; }
-            set
-            {
-                SetProperty(ref _geselecteerdeappartement, value);
+                if (SetProperty(ref _status, value))
+                {
+                    switch (Status)
+                    {
+                        case DetailStatus.Tonen:
+                            break;
+                        case DetailStatus.Wijzigen:
+                            IsEnabled = true;
+                            break;
+                        case DetailStatus.Bewaren:
+                            break;
+                        case DetailStatus.Annuleren:
+                            break;
+                        default:
+                            break;
+                    }
+                }
             }
         }
 
@@ -60,8 +70,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         {
             Title = "Aanpassen Appartementen";
             IsEnabled = false;
-            Woningen = KlantenRepository.GetAppartementen();
-
+            Appartementen = KlantenRepository.GetAppartementen();
             // Commands
             AppartementBewarenCommand = new RelayCommand(AppartementBewarenCommandExecute, AppartementBewarenCommandCanExecute);
             AppartementAnnulerenCommand = new RelayCommand(AppartementAnnulerenCommandExecute);
@@ -69,11 +78,13 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 
         public void AppartementBewarenCommandExecute()
         {
-            KlantenRepository.UpdateWoning(Appartementen);
+            KlantenRepository.UpdateWoning(Appartement.Id, Appartement);
+            Appartementen = KlantenRepository.GetAppartementen();
+            IsEnabled = false;
         }
         private Boolean AppartementBewarenCommandCanExecute()
         {
-            return Appartementen?.Changed??false;
+            return Appartement?.Changed??false;
         }
 
         private void AppartementAnnulerenCommandExecute()

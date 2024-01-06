@@ -50,9 +50,62 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 
             // Viewmodels
             AppartementAddView = new AppartementAddViewModel(Appartement);
+            AppartementAddView.PropertyChanged += ViewModel_PropertyChanged;
+
             AppartementEditView = new AppartementEditViewModel();
+            AppartementEditView.PropertyChanged += ViewModel_PropertyChanged;
+
 
         }
 
+        private void ViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            AppartementAddViewModel klvm = (AppartementAddViewModel)AppartementAddView;
+            AppartementEditViewModel kdvm = (AppartementEditViewModel)AppartementEditView;
+            if (sender is AppartementAddViewModel)
+            {
+                switch (e.PropertyName)
+                {
+                    case "GeselecteerdeAppartement":
+                        kdvm.Appartement = klvm.GeselecteerdeAppartement;
+                        break;
+                    case "Status":
+                        if (klvm.Status == LijstStatus.Wijzigen)
+                        {
+                            kdvm.Status = DetailStatus.Wijzigen;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else if (sender is AppartementEditViewModel)
+            {
+                switch (e.PropertyName)
+                {
+                    case "Appartement":
+                        klvm.Appartementen = kdvm.Appartementen;
+                        break;
+                }
+            }
+            else
+            {
+                switch (e.PropertyName)
+                {
+                    case "Status":
+                        if (kdvm.Status == DetailStatus.Annuleren)
+                        {
+                            klvm.Status = LijstStatus.Tonen;
+                        }
+                        else if (kdvm.Status == DetailStatus.Bewaren)
+                        {
+                            klvm.Status = LijstStatus.Tonen;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
     }
 }

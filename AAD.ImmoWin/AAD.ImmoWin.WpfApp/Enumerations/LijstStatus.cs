@@ -1,4 +1,4 @@
-﻿public enum KlantLijstStatus
+﻿public enum LijstStatus
 {
 	Tonen,
 	Toevoegen,

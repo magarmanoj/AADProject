@@ -14,8 +14,6 @@ namespace AAD.ImmoWin.Business.Services
 {
     public static class KlantenRepository
     {
-        private static Klanten _klanten;
-        private static Woningen _woningen;
         public static DataBaseContext context { get; set; }
         static KlantenRepository()
         {
@@ -44,16 +42,19 @@ namespace AAD.ImmoWin.Business.Services
             context.SaveChanges();
             return woning;
         }
-        public static IWoning UpdateWoning(IWoning woning)
+
+        public static void UpdateWoning(int id, Woning updatedWoning)
         {
-            context.Woningen.AddOrUpdate(woning as Woning);
-            context.SaveChanges();
-            return woning;
+            Woning woning = context.Woningen.Find(id);
+            if(woning != null)
+            {
+                context.Entry(woning).CurrentValues.SetValues(updatedWoning);
+                context.SaveChanges() ;
+            }
         }
         public static void RemoveWoning(IWoning woning)
         {
             context.Woningen.Remove(woning as Woning);
-            _woningen.Remove(woning);
             context.SaveChanges();
         }
         #endregion
@@ -62,9 +63,28 @@ namespace AAD.ImmoWin.Business.Services
         public static IKlant AddKlant(IKlant klant)
         {
             context.Klanten.Add(klant as Klant);
+
+            int eigendommenCount = klant.Eigendommen != null ? klant.Eigendommen.Count : 0;
+
             context.SaveChanges();
+
+            if (eigendommenCount > 0)
+            {
+                List<Woning> woningenList = new List<Woning>();
+
+                for (int i = 0; i < eigendommenCount; i++)
+                {
+                    Woning e = (Woning)klant.Eigendommen[i];
+                    woningenList.Add(e);
+                }
+
+                context.Woningen.AddRange(woningenList);
+                context.SaveChanges();
+            }
+
             return klant;
         }
+
 
         public static IKlant UpdateKlant(IKlant klant)
         {
@@ -76,7 +96,6 @@ namespace AAD.ImmoWin.Business.Services
         public static void RemoveKlant(IKlant klant)
         {
             context.Klanten.Remove(klant as Klant);
-            _klanten.Remove(klant);
             context.SaveChanges();
         }
         #endregion

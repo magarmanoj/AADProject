@@ -80,9 +80,9 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 						kdvm.Klant = klvm.GeselecteerdeKlant;
 						break;
 					case "Status":
-						if (klvm.Status == KlantLijstStatus.Wijzigen)
+						if (klvm.Status == LijstStatus.Wijzigen)
 						{
-							kdvm.Status = KlantDetailStatus.Wijzigen;
+							kdvm.Status = DetailStatus.Wijzigen;
 						}
 						break;
 					default:
@@ -94,13 +94,13 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 				switch (e.PropertyName)
 				{
 					case "Status":
-						if (kdvm.Status == KlantDetailStatus.Annuleren)
+						if (kdvm.Status == DetailStatus.Annuleren)
 						{
-							klvm.Status = KlantLijstStatus.Tonen;
+							klvm.Status = LijstStatus.Tonen;
 						}
-                        else if (kdvm.Status == KlantDetailStatus.Bewaren)
+                        else if (kdvm.Status == DetailStatus.Bewaren)
                         {
-                            klvm.Status = KlantLijstStatus.Tonen;
+                            klvm.Status = LijstStatus.Tonen;
                         }
                         break;
 					default:

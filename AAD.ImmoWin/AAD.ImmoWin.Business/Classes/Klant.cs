@@ -6,6 +6,7 @@ using System.Globalization;
 using Odisee.Common.Observables;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.InteropServices;
 
 namespace AAD.ImmoWin.Business.Classes
 {
@@ -46,7 +47,7 @@ namespace AAD.ImmoWin.Business.Classes
         public Woningen Eigendommen
         {
             get { return _eigendommen; }
-            private set { _eigendommen = value; }
+            set { _eigendommen = value; }
         }
         #endregion
 
@@ -66,7 +67,8 @@ namespace AAD.ImmoWin.Business.Classes
 
         public Klant()
         {
-
+            Eigendommen = new Woningen();
+            Eigendommen.CollectionChanged += Eigendommen_CollectionChanged;
         }
 
         private void Eigendommen_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
@@ -132,7 +134,7 @@ namespace AAD.ImmoWin.Business.Classes
             {
                 default:
                 case "T": // typical
-                    result = $"{Familienaam} {Voornaam} #eigendommen: {Eigendommen}";
+                    result = $"{Familienaam} {Voornaam} #eigendommen: {Eigendommen.Count}";
                     break;
                 case "VF": // voornaam familienaam
                     result = $"{Voornaam} {Familienaam}".Trim();
