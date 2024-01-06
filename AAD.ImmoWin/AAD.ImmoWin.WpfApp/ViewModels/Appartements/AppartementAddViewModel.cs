@@ -94,6 +94,8 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
                 }
             }
         }
+
+
         public AppartementAddViewModel(List<Appartement> appartement)
         {
             Title = "Toevoegen Appartementen";
@@ -102,7 +104,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 
             NewAppartement = new Appartement
             {
-                Adres = new Adres()
+                Adres = new Adres(),
             };
 
             // Commands
@@ -113,8 +115,10 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 
         public void AppartementToevoegenCommandExecute()
         {
+
             SelectedType.Eigendommen.Add(NewAppartement);
-            KlantenRepository.AddKlant(SelectedType);
+            KlantenRepository.AddWoning(NewAppartement);
+            KlantenRepository.UpdateKlant(SelectedType);
             Appartementen = KlantenRepository.GetAppartementen();
 
         }

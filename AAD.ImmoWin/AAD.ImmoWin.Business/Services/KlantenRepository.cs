@@ -14,12 +14,21 @@ namespace AAD.ImmoWin.Business.Services
 {
     public static class KlantenRepository
     {
+        private static Woningen _woningen;
         public static DataBaseContext context { get; set; }
         static KlantenRepository()
         {
             context = new DataBaseContext();
         }
 
+        public static Woningen GetWoningen()
+        {
+            List<Woning> woningenList = context.Woningen
+                    .Where(w => w is Appartement)
+                    .ToList();
+            _woningen = new Woningen(woningenList);
+            return _woningen;
+        }
         public static List<Klant> GetKlanten()
         {
             return context.Klanten.ToList();

@@ -73,9 +73,9 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
                             kdvm.Status = DetailStatus.Wijzigen;
                         }
                         break;
-                    case "SelectedType":
-                        kdvm.Klant = klvm.SelectedType;
-                        break;
+                    /*case "SelectedType":
+                        kdvm.Klant.Eigendommen = klvm.GeselecteerdeAppartement;
+                        break;*/
                     default:
                         break;
                 }
