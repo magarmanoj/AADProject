@@ -114,7 +114,6 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 
         public void AppartementToevoegenCommandExecute()
         {
-
             KlantenRepository.AddWoning(NewAppartement);
             Appartementen = KlantenRepository.GetAppartementen();
 

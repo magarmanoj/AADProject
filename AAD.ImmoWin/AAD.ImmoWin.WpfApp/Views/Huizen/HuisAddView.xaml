@@ -17,7 +17,7 @@
 
         </Grid.RowDefinitions>
         <Label Content="{Binding Title}" Style="{StaticResource TitelLabel}"></Label>
-        <ListBox ItemsSource="{Binding Huizen, Mode=OneWay}" SelectedItem="{Binding GeselecteerdeHuizen}" Margin="5" Grid.Row="1"></ListBox>
+        <ListBox ItemsSource="{Binding Huizen}" SelectedItem="{Binding GeselecteerdeHuizen}" Margin="5" Grid.Row="1"></ListBox>
         <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
             <Grid>
                 <Grid.RowDefinitions>
@@ -29,7 +29,7 @@
                     <ColumnDefinition Width="250" />
                     <ColumnDefinition Width="auto" />
                 </Grid.ColumnDefinitions>
-                <ComboBox Text="Select Eigenaar..." Grid.Row="0" ItemsSource="{Binding Klanten}" SelectedItem="{Binding SelectedType}" Margin="5" Grid.ColumnSpan="2"></ComboBox>
+                <ComboBox Grid.Row="0" ItemsSource="{Binding Klanten}" SelectedItem="{Binding SelectedType}" Margin="5" Grid.ColumnSpan="2"></ComboBox>
                 <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" Margin="5">
                     <Label Content="Types"></Label>
                     <Label Content="Waarde"></Label>
@@ -37,15 +37,17 @@
                     <Label Content="Nummer"></Label>
                     <Label Content="Postnummer"></Label>
                     <Label Content="Gemeente"></Label>
+                    <Label Content="BouwDatum"></Label>
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Margin="5">
-                    <ComboBox Text="Select Soorten Huizen." ItemsSource="{Binding HuisSoort}"   SelectedItem="{Binding SelectedType}"  Margin="5"></ComboBox>
-                    <TextBox Text="{Binding Waarde}" Margin="5" />
-                    <TextBox Text="{Binding Straat}" Margin="5" />
-                    <TextBox Text="{Binding Nummer}" Margin="5" />
-                    <TextBox Text="{Binding Postnummer}" Margin="5" />
-                    <TextBox Text="{Binding Gemeente}" Margin="5" />
+                    <ComboBox Text="Select Soorten Huizen." ItemsSource="{Binding HuisSoort}"   SelectedItem="{Binding NewHuizen.Type}"  Margin="5"></ComboBox>
+                    <TextBox Text="{Binding NewHuizen.Waarde}" Margin="5" />
+                    <TextBox Text="{Binding NewHuizen.Adres.Straat}" Margin="5" />
+                    <TextBox Text="{Binding NewHuizen.Adres.Nummer}" Margin="5" />
+                    <TextBox Text="{Binding NewHuizen.Adres.Postnummer}" Margin="5" />
+                    <TextBox Text="{Binding NewHuizen.Adres.Gemeente}" Margin="5" />
+                    <DatePicker SelectedDate="{Binding NewHuizen.BouwDatum}" Margin="5" />
                 </StackPanel>
             </Grid>
         </ScrollViewer>

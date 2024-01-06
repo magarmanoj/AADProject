@@ -54,8 +54,6 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 
             AppartementEditView = new AppartementEditViewModel();
             AppartementEditView.PropertyChanged += ViewModel_PropertyChanged;
-
-
         }
 
         private void ViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)

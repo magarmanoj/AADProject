@@ -24,44 +24,50 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             }
         }
 
-        private List<Huis> _woning;
+        private List<Huis> _woningHuizen;
 
-        public List<Huis> Woningen
+        public List<Huis> WoningHuizen
         {
-            get { return _woning; }
+            get { return _woningHuizen; }
             set
             {
-                SetProperty(ref _woning, value);
+                SetProperty(ref _woningHuizen, value);
             }
         }
 
+        private DetailStatus _status;
 
-        private Adres _adres;
-
-        public Adres Adres
+        public DetailStatus Status
         {
-            get { return _adres; }
+            get { return _status; }
             set
             {
-                SetProperty(ref _adres, value);
+                if (SetProperty(ref _status, value))
+                {
+                    switch (Status)
+                    {
+                        case DetailStatus.Tonen:
+                            break;
+                        case DetailStatus.Wijzigen:
+                            IsEnabled = true;
+                            break;
+                        case DetailStatus.Bewaren:
+                            break;
+                        case DetailStatus.Annuleren:
+                            break;
+                        default:
+                            break;
+                    }
+                }
             }
         }
-        private Huis _geselecteerdeHuis;
 
-        public Huis GeselecteerdeHuizen
-        {
-            get { return _geselecteerdeHuis; }
-            set
-            {
-                SetProperty(ref _geselecteerdeHuis, value);
-            }
-        }
 
         public HuisEditViewModel()
         {
             Title = "Aanpassen Huizen";
             IsEnabled = false;
-            Woningen = KlantenRepository.GetHuizen();
+            WoningHuizen = KlantenRepository.GetHuizen();
 
             // Commands
             HuisBewarenCommand = new RelayCommand(HuisBewarenCommandExecute, HuisBewarenCommandCanExecute);
@@ -71,6 +77,8 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         public void HuisBewarenCommandExecute()
         {
             KlantenRepository.UpdateWoning(Huizen.Id, Huizen);
+            WoningHuizen = KlantenRepository.GetHuizen();
+            IsEnabled = false;
         }
         private Boolean HuisBewarenCommandCanExecute()
         {

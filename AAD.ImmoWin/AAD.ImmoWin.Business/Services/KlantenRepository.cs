@@ -22,7 +22,7 @@ namespace AAD.ImmoWin.Business.Services
 
         public static List<Klant> GetKlanten()
         {
-            return context.Klanten.ToList();
+            return context.Klanten.Include(k => k.Eigendommen).ToList();
         }
 
         public static List<Appartement> GetAppartementen()
@@ -63,21 +63,16 @@ namespace AAD.ImmoWin.Business.Services
         public static IKlant AddKlant(IKlant klant)
         {
             context.Klanten.Add(klant as Klant);
-
-            int eigendommenCount = klant.Eigendommen != null ? klant.Eigendommen.Count : 0;
-
             context.SaveChanges();
-
-            if (eigendommenCount > 0)
+            if (klant.Eigendommen != null && klant.Eigendommen.Any())
             {
                 List<Woning> woningenList = new List<Woning>();
 
-                for (int i = 0; i < eigendommenCount; i++)
+                for (int i = 0; i < klant.Eigendommen.Count; i++)
                 {
                     Woning e = (Woning)klant.Eigendommen[i];
                     woningenList.Add(e);
                 }
-
                 context.Woningen.AddRange(woningenList);
                 context.SaveChanges();
             }

@@ -17,7 +17,7 @@
         </Grid.RowDefinitions>
         <Label Content="{Binding Title}" Style="{StaticResource TitelLabel}"></Label>
         <Border BorderBrush="Gray" BorderThickness="1" Margin="5" Grid.Row="1">
-            <local:HuisDataView DataContext="{Binding GeselecteerdeHuizen}"></local:HuisDataView>
+            <local:HuisDataView></local:HuisDataView>
         </Border>
         <UniformGrid Columns="4" Margin="5" Grid.Row="2" Grid.ColumnSpan="2">
             <Button Content="Bewaren" Command="{Binding HuisBewarenCommand}" Margin="5"></Button>

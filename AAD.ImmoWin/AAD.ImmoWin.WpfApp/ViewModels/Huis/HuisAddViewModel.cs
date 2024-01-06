@@ -16,6 +16,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         public RelayCommand HuisWijzigenCommand { get; set; }
         public RelayCommand HuisVerwijderenCommand { get; set; }
 
+        public Huis NewHuizen { get; set; } = new Huis();
 
         public List<String> HuisSoort { get; set; }
 
@@ -99,7 +100,10 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             Title = "Toevoegen Huisen";
             Huizen = Huis;
             Klanten = KlantenRepository.GetKlanten();
-
+            NewHuizen = new Huis
+            {
+                Adres = new Adres()
+            };
             // Commands
             HuisToevoegenCommand = new RelayCommand(HuisToevoegenCommandExecute, HuisToevoegenCommandCanExecute);
             HuisWijzigenCommand = new RelayCommand(HuisWijzigenCommandExecute, HuisBewarenCommandCanExecute);
@@ -107,53 +111,11 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             HuisSoort = Enums.GetDescriptions<Huistype>();
         }
 
-        private String _straat;
-        public string Straat
-        {
-            get { return _straat; }
-            set { SetProperty(ref _straat, value); }
-        }
 
-        private int _nummer;
-        public int Nummer
-        {
-            get { return _nummer; }
-            set { SetProperty(ref _nummer, value); }
-        }
-
-        private int _postnummer;
-        public int Postnummer
-        {
-            get { return _postnummer; }
-            set { SetProperty(ref _postnummer, value); }
-        }
-
-        private String _gemeente;
-        public String Gemeente
-        {
-            get { return _gemeente; }
-            set { SetProperty(ref _gemeente, value); }
-        }
-
-        private int _waarde;
-        public int Waarde
-        {
-            get { return _waarde; }
-            set { SetProperty(ref _waarde, value); }
-        }
-
-        private Klant _eigenaar;
-        public Klant Eigenaar
-        {
-            get { return _eigenaar; }
-            set
-            {
-                SetProperty(ref _eigenaar, value);
-            }
-        }
         public void HuisToevoegenCommandExecute()
         {
-
+            KlantenRepository.AddWoning(NewHuizen);
+            Huizen = KlantenRepository.GetHuizen();
         }
         private Boolean HuisToevoegenCommandCanExecute()
         {
@@ -164,11 +126,10 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         {
             IsEnabled = false;
             Status = LijstStatus.Wijzigen;
-
         }
         private Boolean HuisBewarenCommandCanExecute()
         {
-            return false;
+            return GeselecteerdeHuizen != null;
 
         }
         private void HuisVerwijderenCommandExecute()
@@ -178,7 +139,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         }
         private Boolean HuisVerwijderenCommandCanExecute()
         {
-            return IsEnabled = true;
+            return GeselecteerdeHuizen != null;
         }
     }
 }
