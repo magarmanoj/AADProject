@@ -17,6 +17,7 @@ namespace AAD.ImmoWin.Business.Classes
         private Adres _adres;
         private DateTime? _bouwDatum;
         private Decimal? _waarde;
+
         public Decimal? Waarde
         {
             get { return _waarde; }

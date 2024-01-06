@@ -30,17 +30,16 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             }
         }
 
-
-        private List<Klant> _klant;
+        private List<Klant> _klanten;
         public List<Klant> Klanten
         {
             get
             {
-                return _klant;
+                return _klanten;
             }
             set
             {
-                SetProperty(ref _klant, value);
+                SetProperty(ref _klanten, value);
             }
         }
 
@@ -114,7 +113,8 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 
         public void AppartementToevoegenCommandExecute()
         {
-            KlantenRepository.AddWoning(NewAppartement);
+            SelectedType.Eigendommen.Add(NewAppartement);
+            KlantenRepository.AddKlant(SelectedType);
             Appartementen = KlantenRepository.GetAppartementen();
 
         }

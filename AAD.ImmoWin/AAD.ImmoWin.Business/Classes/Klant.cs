@@ -76,6 +76,7 @@ namespace AAD.ImmoWin.Business.Classes
             OnPropertyChanged("Eigendommen");
         }
 
+
         #endregion
 
         #region Methods

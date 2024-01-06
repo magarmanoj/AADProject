@@ -14,7 +14,6 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 
 
         private Appartement _appartement;
-
         public Appartement Appartement
         {
             get { return _appartement; }
@@ -24,6 +23,12 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             }
         }
 
+        private Klant _klant;
+        public Klant Klant
+        {
+            get { return _klant; }
+            set { SetProperty(ref _klant, value); }
+        }
         private List<Appartement> _appartementen;
 
         public List<Appartement> Appartementen

@@ -22,7 +22,7 @@ namespace AAD.ImmoWin.Business.Services
 
         public static List<Klant> GetKlanten()
         {
-            return context.Klanten.Include(k => k.Eigendommen).ToList();
+            return context.Klanten.ToList();
         }
 
         public static List<Appartement> GetAppartementen()
