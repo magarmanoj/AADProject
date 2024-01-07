@@ -5,40 +5,48 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AAD.ImmoWin.WpfApp.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+				 IsEnabled="{Binding IsEnabled}"
+				 >
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
                 <RowDefinition Height="auto"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical" Margin="5">
-                <Label Content="Verdieping:"></Label>
-                <Label Content="Waarde:"></Label>
-                <Label Content="Straat:"></Label>
-                <Label Content="Nummer:"></Label>
-                <Label Content="Postnummer:"></Label>
-                <Label Content="Gemeente:"></Label>
-                <Label Content="BouwDatum:"></Label>
-                <Label Content="EigenaarVoornaam:"></Label>
-                <Label Content="EigenaarFamilienaam:"></Label>
-            </StackPanel>
-            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Margin="5">
-                <TextBox Text="{Binding Appartement.Verdieping, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
-                <TextBox Text="{Binding Appartement.Waarde, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
-                <TextBox Text="{Binding Appartement.Adres.Straat, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
-                <TextBox Text="{Binding Appartement.Adres.Nummer, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
-                <TextBox Text="{Binding Appartement.Adres.Postnummer, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
-                <TextBox Text="{Binding Appartement.Adres.Gemeente, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
-                <TextBox Text="{Binding Appartement.BouwDatum, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
-                <TextBox Text="{Binding Appartement.Klant.Voornaam, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
-                <TextBox Text="{Binding Appartement.Klant.Familienaam, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
+            <Label Content="Verdieping:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" />
+            <Label Content="Waarde:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Grid.Row="1" />
+            <Label Content="Straat:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Grid.Row="2" />
+            <Label Content="Nummer:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Grid.Row="3" />
+            <Label Content="Postnummer:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Grid.Row="4" />
+            <Label Content="Gemeente:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Grid.Row="5" />
+            <Label Content="BouwDatum:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Grid.Row="6" />
+            <Label Content="EigenaarVoornaam:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Grid.Row="7" />
+            <Label Content="EigenaarFamilienaam:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Grid.Row="8" />
 
-                
+            <TextBox Text="{Binding Appartement.Verdieping, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="5" Grid.Column="1" />
+            <TextBox Text="{Binding Appartement.Waarde, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="5" Grid.Column="1" Grid.Row="1" />
+            <TextBox Text="{Binding Appartement.Adres.Straat, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="5" Grid.Column="1" Grid.Row="2" />
+            <TextBox Text="{Binding Appartement.Adres.Nummer, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="5" Grid.Column="1" Grid.Row="3" />
+            <TextBox Text="{Binding Appartement.Adres.Postnummer, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="5" Grid.Column="1" Grid.Row="4" />
+            <TextBox Text="{Binding Appartement.Adres.Gemeente, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="5" Grid.Column="1" Grid.Row="5" />
+            <TextBox Text="{Binding Appartement.BouwDatum, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="5" Grid.Column="1" Grid.Row="6" />
+            <StackPanel Grid.Column="1" Grid.Row="7" Orientation="Horizontal" Margin="5">
+                <TextBox Text="{Binding Appartement.Klant.Voornaam, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="5" Width="215" IsReadOnly="True"/>
+                <ComboBox ItemsSource="{Binding Klanten}" SelectedItem="{Binding SelectedType}" Margin="5" Width="215"/>
             </StackPanel>
+            <TextBox Text="{Binding Appartement.Klant.Familienaam, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"  Margin="5" Grid.Column="1" Grid.Row="8" IsReadOnly="True"/>
         </Grid>
     </Grid>
 </UserControl>

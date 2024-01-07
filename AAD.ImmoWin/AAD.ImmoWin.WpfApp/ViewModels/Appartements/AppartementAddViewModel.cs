@@ -136,7 +136,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         }
         private Boolean AppartementWijzigenCommandCanExecute()
         {
-            return GeselecteerdeAppartement?.Changed ?? false;
+            return GeselecteerdeAppartement != null;
 
         }
         private void AppartementVerwijderenCommandExecute()
@@ -147,7 +147,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         }
         private Boolean AppartementVerwijderenCommandCanExecute()
         {
-            return GeselecteerdeAppartement?.Changed ?? false;
+            return GeselecteerdeAppartement != null;
         }
     }
 }

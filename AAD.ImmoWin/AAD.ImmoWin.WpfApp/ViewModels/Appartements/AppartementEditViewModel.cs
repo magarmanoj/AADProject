@@ -23,6 +23,30 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             }
         }
 
+        private List<Klant> _klanten;
+        public List<Klant> Klanten
+        {
+            get
+            {
+                return _klanten;
+            }
+            set
+            {
+                SetProperty(ref _klanten, value);
+            }
+        }
+
+        private Klant _selectedType;
+        public Klant SelectedType
+        {
+            get { return _selectedType; }
+            set
+            {
+                _selectedType = value;
+                OnPropertyChanged(nameof(SelectedType));
+            }
+        }
+
 
         private List<Appartement> _appartementen;
 
@@ -72,6 +96,8 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             IsEnabled = false;
             Status = DetailStatus.Tonen;
             Appartementen = KlantenRepository.GetAppartementen();
+            Klanten = KlantenRepository.GetKlanten();
+
             // Commands
             AppartementBewarenCommand = new RelayCommand(AppartementBewarenCommandExecute, AppartementBewarenCommandCanExecute);
             AppartementAnnulerenCommand = new RelayCommand(AppartementAnnulerenCommandExecute);
@@ -79,10 +105,17 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 
         public void AppartementBewarenCommandExecute()
         {
-            KlantenRepository.UpdateWoning(Appartement.Id, Appartement);
-            Appartementen = KlantenRepository.GetAppartementen();
             IsEnabled = false;
             Status = DetailStatus.Bewaren;
+            KlantenRepository.UpdateWoning(Appartement.Id, Appartement);
+            if (SelectedType != null)
+            {
+                Appartement.Klant = SelectedType;
+                SelectedType.Eigendommen.Add(Appartement);
+                KlantenRepository.UpdateKlantByID(SelectedType.Id, SelectedType);
+                
+            }
+            Appartementen = KlantenRepository.GetAppartementen();
         }
         private Boolean AppartementBewarenCommandCanExecute()
         {
