@@ -91,7 +91,6 @@ namespace AAD.ImmoWin.Business.Services
                 context.Woningen.AddRange(woningenList);
                 context.SaveChanges();
             }
-
             return klant;
         }
 
@@ -102,6 +101,16 @@ namespace AAD.ImmoWin.Business.Services
             context.Klanten.AddOrUpdate(klant as Klant);
             context.SaveChanges();
             return klant;
+        }
+        public static void UpdateKlantByID(int id, Klant klant)
+        {
+            Klant k = context.Klanten.Find(id);
+            if (k != null)
+            {
+                context.Entry(k).CurrentValues.SetValues(klant);
+                context.SaveChanges();
+            }
+            context.SaveChanges();
         }
 
         public static void RemoveKlant(IKlant klant)

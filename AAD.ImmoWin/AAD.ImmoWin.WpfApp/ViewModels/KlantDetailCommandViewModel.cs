@@ -33,7 +33,20 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 			}
 		}
 
-		private DetailStatus _status;
+
+
+        private List<Klant> _klanten;
+
+        public List<Klant> Klanten
+        {
+            get { return _klanten; }
+            set
+            {
+                SetProperty(ref _klanten, value);
+            }
+        }
+
+        private DetailStatus _status;
 
 		public DetailStatus Status
 		{
@@ -73,9 +86,10 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 			Title = "Klant detailgegevens";
 			IsEnabled = false;
 			Status = DetailStatus.Tonen;
+            Klanten = KlantenRepository.GetKlanten();
 
-			// Commands
-			KlantWijzigingBewarenCommand = new RelayCommand(KlantWijzigingBewarenCommandExecute, KlantWijzigingBewarenCommandCanExecute);
+            // Commands
+            KlantWijzigingBewarenCommand = new RelayCommand(KlantWijzigingBewarenCommandExecute, KlantWijzigingBewarenCommandCanExecute);
 			KlantWijzigingAnnulerenCommand = new RelayCommand(KlantWijzigingAnnulerenCommandExecute);
 		}
 
@@ -87,9 +101,11 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 
 		private void KlantWijzigingBewarenCommandExecute()
 		{
-			KlantenRepository.UpdateKlant(Klant);
             IsEnabled = false;
             Status = DetailStatus.Bewaren;
+            KlantenRepository.UpdateKlantByID(Klant.Id, Klant);
+			Klanten = KlantenRepository.GetKlanten();
+
         }
 		private Boolean KlantWijzigingBewarenCommandCanExecute()
 		{

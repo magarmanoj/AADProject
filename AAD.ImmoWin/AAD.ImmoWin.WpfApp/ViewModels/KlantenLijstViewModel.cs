@@ -107,6 +107,8 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         {
             KlantenRepository.AddKlant(NewKlanten);
             Klanten = KlantenRepository.GetKlanten();
+            Status = LijstStatus.Toevoegen;
+
         }
         private Boolean KlantToevoegenCommandCanExecute()
         {
@@ -120,11 +122,12 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         }
         private Boolean KlantWijzigenCommandCanExecute()
         {
-            return GeselecteerdeKlant?.Changed ?? false;
+            return GeselecteerdeKlant != null;
         }
 
         private void KlantVerwijderenCommandExecute()
-        {
+        {            
+            Status = LijstStatus.Verwijderen;
             // Klant alleen kunnen verwijderen als die geen eigendommen heeft. 
             if (GeselecteerdeKlant != null)
             {
@@ -141,10 +144,11 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
                 }
             }
             Klanten = KlantenRepository.GetKlanten();
+
         }
         private Boolean KlantVerwijderenCommandCanExecute()
         {
-            return GeselecteerdeKlant?.Changed ?? false;
+            return GeselecteerdeKlant != null;
         }
 
         #endregion
