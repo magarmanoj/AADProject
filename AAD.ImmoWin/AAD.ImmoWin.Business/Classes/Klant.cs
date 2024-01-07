@@ -38,8 +38,6 @@ namespace AAD.ImmoWin.Business.Classes
             get { return _familienaam; }
             set
             {
-                if (String.IsNullOrEmpty(value))
-                    throw new NaamLeeg_KlantException();
                 SetProperty(ref _familienaam, value);
             }
         }

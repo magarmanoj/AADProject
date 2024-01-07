@@ -1,6 +1,8 @@
 ﻿using AAD.ImmoWin.Business.Classes;
+using AAD.ImmoWin.Business.Exceptions;
 using AAD.ImmoWin.Business.Interfaces;
 using AAD.ImmoWin.Business.Services;
+using AAD.ImmoWin.Business.Validatie;
 using Odisee.Common.Commands;
 using Odisee.Common.ViewModels;
 using System;
@@ -105,10 +107,18 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         #region Command  methods
         private void KlantToevoegenCommandExecute()
         {
-            KlantenRepository.AddKlant(NewKlanten);
-            Klanten = KlantenRepository.GetKlanten();
-            Status = LijstStatus.Toevoegen;
+            try
+            {
+                KlantenValidatie.ValidateKlant(NewKlanten);
 
+                KlantenRepository.AddKlant(NewKlanten);
+                Klanten = KlantenRepository.GetKlanten();
+                Status = LijstStatus.Toevoegen;
+            }
+            catch (NaamLeeg_KlantException ex)
+            {
+                MessageBox.Show(ex.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
         private Boolean KlantToevoegenCommandCanExecute()
         {

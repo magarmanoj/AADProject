@@ -1,5 +1,7 @@
 ﻿using AAD.ImmoWin.Business.Classes;
+using AAD.ImmoWin.Business.Exceptions;
 using AAD.ImmoWin.Business.Services;
+using AAD.ImmoWin.Business.Validatie;
 using Odisee.Common.Commands;
 using Odisee.Common.ViewModels;
 using System;
@@ -7,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace AAD.ImmoWin.WpfApp.ViewModels
 {
@@ -101,11 +104,18 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 
 		private void KlantWijzigingBewarenCommandExecute()
 		{
-            IsEnabled = false;
-            Status = DetailStatus.Bewaren;
-            KlantenRepository.UpdateKlantByID(Klant.Id, Klant);
-			Klanten = KlantenRepository.GetKlanten();
-
+            try
+            {
+                KlantenValidatie.ValidateKlant(Klant);
+                IsEnabled = false;
+                Status = DetailStatus.Bewaren;
+                KlantenRepository.UpdateKlantByID(Klant.Id, Klant);
+                Klanten = KlantenRepository.GetKlanten();
+            }
+            catch (NaamLeeg_KlantException ex)
+            {
+                MessageBox.Show(ex.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 		private Boolean KlantWijzigingBewarenCommandCanExecute()
 		{

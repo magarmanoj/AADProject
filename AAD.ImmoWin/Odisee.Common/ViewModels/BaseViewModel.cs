@@ -34,7 +34,7 @@ namespace Odisee.Common.ViewModels
 			set
 			{
 				SetProperty(ref _isEnabled, value);
-			}
+            }
 		}
 
 		#endregion

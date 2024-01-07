@@ -3,10 +3,12 @@ using AAD.ImmoWin.Business.Enumerations;
 using AAD.ImmoWin.Business.Exceptions;
 using AAD.ImmoWin.Business.Interfaces;
 using AAD.ImmoWin.Business.Services;
+using AAD.ImmoWin.Business.Validatie;
 using Odisee.Common.Commands;
 using Odisee.Common.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Windows;
 
 namespace AAD.ImmoWin.WpfApp.ViewModels
 {
@@ -114,10 +116,20 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 
         public void HuisToevoegenCommandExecute()
         {
-            SelectedType.Eigendommen.Add(NewHuizen);
-            KlantenRepository.AddWoning(NewHuizen);
-            Huizen = KlantenRepository.GetHuizen();
-            Status = LijstStatus.Toevoegen;
+            try
+            {
+                WoningenHuizenValidatie.ValidateHuizen(NewHuizen);
+
+                SelectedType.Eigendommen.Add(NewHuizen);
+                KlantenRepository.AddWoning(NewHuizen);
+                Huizen = KlantenRepository.GetHuizen();
+                Status = LijstStatus.Toevoegen;
+            }
+            catch (WoningException ex)
+            {
+                MessageBox.Show(ex.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
         }
         private Boolean HuisToevoegenCommandCanExecute()
         {

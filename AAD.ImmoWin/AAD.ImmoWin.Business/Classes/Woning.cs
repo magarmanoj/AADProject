@@ -27,8 +27,6 @@ namespace AAD.ImmoWin.Business.Classes
             get { return _waarde; }
             set
             {
-                if (value.HasValue && value < 0)
-                    throw new WaardeTeKlein_WoningException();
                 SetProperty(ref _waarde, value);
             }
         }
@@ -37,8 +35,6 @@ namespace AAD.ImmoWin.Business.Classes
             get { return _bouwDatum; }
             set
             {
-                if (value.HasValue && value > DateTime.Now)
-                    throw new BouwdatumTeGroot_WoningException();
                 SetProperty(ref _bouwDatum, value);
             }
         }

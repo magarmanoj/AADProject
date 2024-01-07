@@ -2,11 +2,13 @@
 using AAD.ImmoWin.Business.Exceptions;
 using AAD.ImmoWin.Business.Interfaces;
 using AAD.ImmoWin.Business.Services;
+using AAD.ImmoWin.Business.Validatie;
 using AAD.ImmoWin.WpfApp.Views;
 using Odisee.Common.Commands;
 using Odisee.Common.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Windows;
 
 namespace AAD.ImmoWin.WpfApp.ViewModels
 {
@@ -117,10 +119,22 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         public void AppartementToevoegenCommandExecute()
         {
 
-            SelectedType.Eigendommen.Add(NewAppartement);
-            KlantenRepository.AddWoning(NewAppartement);
-            Appartementen = KlantenRepository.GetAppartementen();
-            Status= LijstStatus.Toevoegen;
+            try
+            {
+                WoningenAppValidatie.ValidateAppartement(NewAppartement);
+
+                SelectedType.Eigendommen.Add(NewAppartement);
+                KlantenRepository.AddWoning(NewAppartement);
+                Appartementen = KlantenRepository.GetAppartementen();
+                Status = LijstStatus.Toevoegen;
+
+            }
+            catch (WoningException ex)
+            {
+                MessageBox.Show(ex.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+
 
         }
         private Boolean AppartementToevoegenCommandCanExecute()

@@ -1,10 +1,13 @@
 ﻿using AAD.ImmoWin.Business.Classes;
+using AAD.ImmoWin.Business.Exceptions;
 using AAD.ImmoWin.Business.Interfaces;
 using AAD.ImmoWin.Business.Services;
+using AAD.ImmoWin.Business.Validatie;
 using Odisee.Common.Commands;
 using Odisee.Common.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Windows;
 
 namespace AAD.ImmoWin.WpfApp.ViewModels
 {
@@ -32,6 +35,30 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             set
             {
                 SetProperty(ref _woningHuizen, value);
+            }
+        }
+
+        private List<Klant> _klanten;
+        public List<Klant> Klanten
+        {
+            get
+            {
+                return _klanten;
+            }
+            set
+            {
+                SetProperty(ref _klanten, value);
+            }
+        }
+
+        private Klant _selectedType;
+        public Klant SelectedType
+        {
+            get { return _selectedType; }
+            set
+            {
+                _selectedType = value;
+                OnPropertyChanged(nameof(SelectedType));
             }
         }
 
@@ -69,6 +96,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             IsEnabled = false;
             Status = DetailStatus.Tonen;
             WoningHuizen = KlantenRepository.GetHuizen();
+            Klanten = KlantenRepository.GetKlanten();
 
             // Commands
             HuisBewarenCommand = new RelayCommand(HuisBewarenCommandExecute, HuisBewarenCommandCanExecute);
@@ -77,15 +105,30 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 
         public void HuisBewarenCommandExecute()
         {
-            KlantenRepository.UpdateWoning(Huizen.Id, Huizen);
-            WoningHuizen = KlantenRepository.GetHuizen();
-            IsEnabled = false;
-            Status = DetailStatus.Bewaren;
+            try
+            {
+                WoningenHuizenValidatie.ValidateHuizen(Huizen);
+                IsEnabled = false;
+                Status = DetailStatus.Bewaren;
 
+                KlantenRepository.UpdateWoning(Huizen.Id, Huizen);
+                if (SelectedType != null)
+                {
+                    Huizen.Klant = SelectedType;
+                    SelectedType.Eigendommen.Add(Huizen);
+                    KlantenRepository.UpdateKlantByID(SelectedType.Id, SelectedType);
+
+                }
+                WoningHuizen = KlantenRepository.GetHuizen();
+            }
+            catch (WoningException ex)
+            {
+                MessageBox.Show(ex.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
         private Boolean HuisBewarenCommandCanExecute()
         {
-            return Huizen?.Changed??false;
+            return Huizen?.Changed ?? false;
         }
 
         private void HuisAnnulerenCommandExecute()

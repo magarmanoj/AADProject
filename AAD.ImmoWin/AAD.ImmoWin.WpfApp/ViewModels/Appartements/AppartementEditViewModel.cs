@@ -1,9 +1,12 @@
 ﻿using AAD.ImmoWin.Business.Classes;
+using AAD.ImmoWin.Business.Exceptions;
 using AAD.ImmoWin.Business.Services;
+using AAD.ImmoWin.Business.Validatie;
 using Odisee.Common.Commands;
 using Odisee.Common.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Windows;
 
 namespace AAD.ImmoWin.WpfApp.ViewModels
 {
@@ -105,21 +108,30 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 
         public void AppartementBewarenCommandExecute()
         {
-            IsEnabled = false;
-            Status = DetailStatus.Bewaren;
-            KlantenRepository.UpdateWoning(Appartement.Id, Appartement);
-            if (SelectedType != null)
+            try
             {
-                Appartement.Klant = SelectedType;
-                SelectedType.Eigendommen.Add(Appartement);
-                KlantenRepository.UpdateKlantByID(SelectedType.Id, SelectedType);
-                
+                WoningenAppValidatie.ValidateAppartement(Appartement);
+                IsEnabled = false;
+                Status = DetailStatus.Bewaren;
+
+                KlantenRepository.UpdateWoning(Appartement.Id, Appartement);
+                if (SelectedType != null)
+                {
+                    Appartement.Klant = SelectedType;
+                    SelectedType.Eigendommen.Add(Appartement);
+                    KlantenRepository.UpdateKlantByID(SelectedType.Id, SelectedType);
+                }
+                Appartementen = KlantenRepository.GetAppartementen();
+
             }
-            Appartementen = KlantenRepository.GetAppartementen();
+            catch (WoningException ex)
+            {
+                MessageBox.Show(ex.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
         private Boolean AppartementBewarenCommandCanExecute()
         {
-            return Appartement?.Changed??false;
+            return Appartement?.Changed ?? false;
         }
 
         private void AppartementAnnulerenCommandExecute()

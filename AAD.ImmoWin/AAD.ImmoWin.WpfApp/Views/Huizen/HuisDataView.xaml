@@ -10,31 +10,37 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical" Margin="5">
-                <Label Content="Types:"></Label>
-                <Label Content="Waarde:"></Label>
-                <Label Content="Straat:"></Label>
-                <Label Content="Nummer:"></Label>
-                <Label Content="Postnummer:"></Label>
-                <Label Content="Gemeente:"></Label>
-                <Label Content="EigenaarVoornaam:"></Label>
-                <Label Content="EigenaarFamilienaam:"></Label>
+                <Label Content="Types:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Grid.Row="0"></Label>
+                <Label Content="Waarde:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Grid.Row="1"></Label>
+                <Label Content="Straat:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Grid.Row="2"></Label>
+                <Label Content="Nummer:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Grid.Row="3"></Label>
+                <Label Content="Postnummer:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Grid.Row="4"></Label>
+                <Label Content="Gemeente:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Grid.Row="5"></Label>
+                <Label Content="EigenaarVoornaam:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Grid.Row="6"></Label>
+                <Label Content="EigenaarFamilienaam:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Grid.Row="7"></Label>
+            <TextBox Text="{Binding Huizen.Type, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="5" Grid.Column="1"  Grid.Row="0" />
+            <TextBox Text="{Binding Huizen.Waarde, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="5" Grid.Column="1"  Grid.Row="1" />
+            <TextBox Text="{Binding Huizen.Adres.Straat, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="5" Grid.Column="1"  Grid.Row="2" />
+            <TextBox Text="{Binding Huizen.Adres.Nummer, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="5" Grid.Column="1"  Grid.Row="3" />
+            <TextBox Text="{Binding Huizen.Adres.Postnummer, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="5" Grid.Column="1"  Grid.Row="4" />
+            <TextBox Text="{Binding Huizen.Adres.Gemeente, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="5" Grid.Column="1"  Grid.Row="5" />
+            <StackPanel Grid.Column="1" Grid.Row="6" Orientation="Horizontal" Margin="5">
+                <TextBox Text="{Binding Huizen.Klant.Voornaam, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="5" Width="215" IsReadOnly="True"/>
+                <ComboBox ItemsSource="{Binding Klanten}" SelectedItem="{Binding SelectedType}" Margin="5" Width="215"/>
             </StackPanel>
-            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Margin="5">
-                <TextBox Text="{Binding Huizen.Type, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
-                <TextBox Text="{Binding Huizen.Waarde, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
-                <TextBox Text="{Binding Huizen.Adres.Straat, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
-                <TextBox Text="{Binding Huizen.Adres.Nummer, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
-                <TextBox Text="{Binding Huizen.Adres.Postnummer, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
-                <TextBox Text="{Binding Huizen.Adres.Gemeente, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
-                <TextBox Text="{Binding Huizen.Klant.Voornaam, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
-                <TextBox Text="{Binding Huizen.Klant.Familienaam, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
-            </StackPanel>
+            <TextBox Text="{Binding Huizen.Klant.Familienaam, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="5" Grid.Column="1"  Grid.Row="7" />
         </Grid>
     </Grid>
 </UserControl>

@@ -25,7 +25,7 @@
                 <ColumnDefinition Width="200" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Label Content="Verdieping:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" />
+            <Label Content="Verdieping:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Grid.Row="0" />
             <Label Content="Waarde:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Grid.Row="1" />
             <Label Content="Straat:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Grid.Row="2" />
             <Label Content="Nummer:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Grid.Row="3" />

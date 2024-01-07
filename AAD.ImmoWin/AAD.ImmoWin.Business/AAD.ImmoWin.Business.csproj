@@ -74,6 +74,9 @@
     <Compile Include="Services\Converter.cs" />
     <Compile Include="Services\Enums.cs" />
     <Compile Include="Services\KlantenRepository.cs" />
+    <Compile Include="Validatie\KlantenValidatie.cs" />
+    <Compile Include="Validatie\WoningenHuizenValidatie.cs" />
+    <Compile Include="Validatie\WoningenAppValidatie.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Odisee.Common\Odisee.Common.csproj">
