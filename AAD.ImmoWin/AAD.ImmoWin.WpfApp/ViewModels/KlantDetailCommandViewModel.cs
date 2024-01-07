@@ -110,7 +110,6 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
                 IsEnabled = false;
                 Status = DetailStatus.Bewaren;
                 KlantenRepository.UpdateKlantByID(Klant.Id, Klant);
-                Klanten = KlantenRepository.GetKlanten();
             }
             catch (NaamLeeg_KlantException ex)
             {

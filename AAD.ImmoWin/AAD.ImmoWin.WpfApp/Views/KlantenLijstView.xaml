@@ -9,28 +9,33 @@
 				 IsEnabled="{Binding IsEnabled}"
 				 >
     <Grid>
-		  <Grid.RowDefinitions>
-				<RowDefinition Height="auto"></RowDefinition>
-				<RowDefinition></RowDefinition>
-				<RowDefinition Height="auto"></RowDefinition>
-				<RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition Height="auto"></RowDefinition>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
-		  <Label Content="{Binding Title}" Style="{StaticResource TitelLabel}"></Label>
-		  <ListBox ItemsSource="{Binding Klanten}" SelectedItem="{Binding GeselecteerdeKlant}" Margin="5" Grid.Row="1"></ListBox>
+        <Label Content="{Binding Title}" Style="{StaticResource TitelLabel}"></Label>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="5">
+            <Label Content="Zoek klanten op:" VerticalAlignment="Center" IsEnabled="False" />
+            <TextBox Text="{Binding FilterText, UpdateSourceTrigger=PropertyChanged}" Width="200" HorizontalAlignment="Center"/>
+        </StackPanel>
+        <ListBox ItemsSource="{Binding FilteredKlanten}" SelectedItem="{Binding GeselecteerdeKlant}" Margin="5" Grid.Row="2"></ListBox>
 
-        <UniformGrid Columns="4" Margin="5" Grid.Row="3">
+        <UniformGrid Columns="4" Margin="5" Grid.Row="4">
             <Button Content="Toevoegen" Command="{Binding KlantToevoegenCommand}" Margin="5"></Button>
             <Button Content="Wijzigen" Command="{Binding KlantWijzigenCommand}" Margin="5"></Button>
             <Button Content="Verwijderen" Command="{Binding KlantVerwijderenCommand}" Margin="5"></Button>
         </UniformGrid>
-        <StackPanel Grid.Row="2" Orientation="Vertical" Margin="5">
+        <StackPanel Grid.Row="3" Orientation="Vertical" Margin="5">
             <Label Content="Voornaam"></Label>
             <TextBox Text="{Binding NewKlanten.Voornaam, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
             <Label Content="Familienaam"></Label>
             <TextBox Text="{Binding NewKlanten.Familienaam, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
         </StackPanel>
-        <Label Grid.Row="4"></Label>
-            
+        <Label Grid.Row="5"></Label>
+
     </Grid>
 </UserControl>

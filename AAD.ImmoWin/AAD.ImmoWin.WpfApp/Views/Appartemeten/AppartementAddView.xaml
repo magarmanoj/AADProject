@@ -29,7 +29,7 @@
                     <ColumnDefinition Width="250" />
                     <ColumnDefinition Width="auto" />
                 </Grid.ColumnDefinitions>
-                <ComboBox Grid.Row="0" ItemsSource="{Binding Klanten}" SelectedItem="{Binding SelectedType}" Margin="5" Grid.ColumnSpan="2"></ComboBox>
+                <ComboBox  Grid.Row="0" ItemsSource="{Binding Klanten}" SelectedItem="{Binding SelectedType}" Margin="5" Grid.ColumnSpan="2"></ComboBox>
                 <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" Margin="5">
                     <Label Content="Verdieping"></Label>
                     <Label Content="Waarde"></Label>
@@ -40,7 +40,7 @@
                     <Label Content="BouwDatum"></Label>
                 </StackPanel>
 
-                <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Margin="5">
+                <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Vertical" Margin="5">
                     <TextBox Text="{Binding NewAppartement.Verdieping}" Margin="5" />
                     <TextBox Text="{Binding NewAppartement.Waarde}" Margin="5" />
                     <TextBox Text="{Binding NewAppartement.Adres.Straat}" Margin="5" />

@@ -1,6 +1,5 @@
 ﻿using AAD.ImmoWin.Business.Classes;
 using AAD.ImmoWin.Business.Exceptions;
-using AAD.ImmoWin.Business.Interfaces;
 using AAD.ImmoWin.Business.Services;
 using AAD.ImmoWin.Business.Validatie;
 using Odisee.Common.Commands;
@@ -8,10 +7,7 @@ using Odisee.Common.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace AAD.ImmoWin.WpfApp.ViewModels
 {
@@ -93,6 +89,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             Title = "Lijst klanten";
             Klanten = klanten;
             Status = LijstStatus.Tonen;
+            FilteredKlanten = Klanten;
 
             // Commands
             KlantToevoegenCommand = new RelayCommand(KlantToevoegenCommandExecute, KlantToevoegenCommandCanExecute);
@@ -100,6 +97,42 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             KlantVerwijderenCommand = new RelayCommand(KlantVerwijderenCommandExecute, KlantVerwijderenCommandCanExecute);
         }
 
+        #region Filter
+        private string _filterText;
+        public string FilterText
+        {
+            get { return _filterText; }
+            set
+            {
+                SetProperty(ref _filterText, value);
+                FilterKlantenList();
+            }
+        }
+
+
+        private IEnumerable<Klant> _filteredKlanten;
+        public IEnumerable<Klant> FilteredKlanten
+        {
+            get { return _filteredKlanten; }
+            set { SetProperty(ref _filteredKlanten, value); }
+        }
+
+        private void FilterKlantenList()
+        {
+            if (string.IsNullOrWhiteSpace(FilterText))
+            {
+                FilteredKlanten = Klanten;
+            }
+            else
+            {
+                string lowerCaseFilterText = FilterText.ToLowerInvariant();
+                FilteredKlanten = Klanten.Where(k =>
+                    (k.Voornaam != null && k.Voornaam.ToLowerInvariant().Contains(lowerCaseFilterText)) ||
+                    (k.Familienaam != null && k.Familienaam.ToLowerInvariant().Contains(lowerCaseFilterText)) ||
+                    k.Eigendommen.Count.ToString().Contains(lowerCaseFilterText));
+            }
+        }
+        #endregion
         #endregion
 
         #region Methods
@@ -112,7 +145,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
                 KlantenValidatie.ValidateKlant(NewKlanten);
 
                 KlantenRepository.AddKlant(NewKlanten);
-                Klanten = KlantenRepository.GetKlanten();
+                FilteredKlanten = KlantenRepository.GetKlanten();
                 Status = LijstStatus.Toevoegen;
             }
             catch (NaamLeeg_KlantException ex)
@@ -153,7 +186,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
                     KlantenRepository.RemoveKlantByID(GeselecteerdeKlant.Id);
                 }
             }
-            Klanten = KlantenRepository.GetKlanten();
+            FilteredKlanten = KlantenRepository.GetKlanten();
 
         }
         private Boolean KlantVerwijderenCommandCanExecute()
@@ -164,5 +197,6 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         #endregion
 
         #endregion
+
     }
 }

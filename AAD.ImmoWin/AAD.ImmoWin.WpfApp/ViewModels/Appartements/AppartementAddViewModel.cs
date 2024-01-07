@@ -100,7 +100,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 
         public AppartementAddViewModel(List<Appartement> appartement)
         {
-            Title = "Toevoegen Appartementen";
+            Title = "Lijsten Appartementen";
             Appartementen = appartement;
             Klanten = KlantenRepository.GetKlanten();
             Status = LijstStatus.Tonen;
