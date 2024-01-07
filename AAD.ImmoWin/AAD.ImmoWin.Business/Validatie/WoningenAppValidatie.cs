@@ -13,6 +13,7 @@ namespace AAD.ImmoWin.Business.Validatie
     {
         public static void ValidateAppartement(Woning appartement)
         {
+            Appartement app = appartement as Appartement;
             if (appartement == null)
             {
                 throw new ArgumentNullException(nameof(appartement));
@@ -24,7 +25,7 @@ namespace AAD.ImmoWin.Business.Validatie
                 throw new WoningException("Invalid Woning data.");
             }
 
-            if (appartement.Waarde <= 0 || appartement.Adres.Nummer <= 0 ||
+            if (app.Verdieping < 0 || appartement.Waarde < 0 || appartement.Adres.Nummer <= 0 ||
                 appartement.Adres.Postnummer <= 0)
             {
                 throw new WaardeTeKlein_WoningException();

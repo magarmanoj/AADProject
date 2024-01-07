@@ -23,7 +23,7 @@ namespace AAD.ImmoWin.Business.Validatie
                 throw new WoningException("Invalid Woning data.");
             }
 
-            if (huis.Waarde <= 0 || huis.Adres.Nummer <= 0 ||
+            if (huis.Waarde < 0 || huis.Adres.Nummer <= 0 ||
                 huis.Adres.Postnummer <= 0)
             {
                 throw new WaardeTeKlein_WoningException();

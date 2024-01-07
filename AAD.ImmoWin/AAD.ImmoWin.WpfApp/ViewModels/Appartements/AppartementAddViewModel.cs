@@ -122,12 +122,17 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             try
             {
                 WoningenAppValidatie.ValidateAppartement(NewAppartement);
-
-                SelectedType.Eigendommen.Add(NewAppartement);
-                KlantenRepository.AddWoning(NewAppartement);
-                Appartementen = KlantenRepository.GetAppartementen();
-                Status = LijstStatus.Toevoegen;
-
+                if (SelectedType != null)
+                {
+                    SelectedType.Eigendommen.Add(NewAppartement);
+                    KlantenRepository.AddWoning(NewAppartement);
+                    Appartementen = KlantenRepository.GetAppartementen();
+                    Status = LijstStatus.Toevoegen;
+                }
+                else
+                {
+                    MessageBox.Show("Selecteer een eigenaar voordat u een nieuw appartement toevoegt.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
             catch (WoningException ex)
             {

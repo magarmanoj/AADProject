@@ -78,15 +78,6 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
                         break;
                 }
             }
-            else if (sender is HuisEditViewModel)
-            {
-                switch (e.PropertyName)
-                {
-                    case "Huizen":
-                        klvm.Huizen = kdvm.WoningHuizen;
-                        break;
-                }
-            }
             else
             {
                 switch (e.PropertyName)

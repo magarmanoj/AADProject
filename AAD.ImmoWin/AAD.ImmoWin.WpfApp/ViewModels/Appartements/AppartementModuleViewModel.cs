@@ -73,19 +73,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
                             kdvm.Status = DetailStatus.Wijzigen;
                         }
                         break;
-                    /*case "SelectedType":
-                        kdvm.Klant.Eigendommen = klvm.GeselecteerdeAppartement;
-                        break;*/
                     default:
-                        break;
-                }
-            }
-            else if (sender is AppartementEditViewModel)
-            {
-                switch (e.PropertyName)
-                {
-                    case "Appartement":
-                        klvm.Appartementen = kdvm.Appartementen;
                         break;
                 }
             }

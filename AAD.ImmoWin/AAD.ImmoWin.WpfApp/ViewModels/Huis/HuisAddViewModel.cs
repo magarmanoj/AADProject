@@ -120,10 +120,17 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             {
                 WoningenHuizenValidatie.ValidateHuizen(NewHuizen);
 
-                SelectedType.Eigendommen.Add(NewHuizen);
-                KlantenRepository.AddWoning(NewHuizen);
-                Huizen = KlantenRepository.GetHuizen();
-                Status = LijstStatus.Toevoegen;
+                if(SelectedType != null)
+                {
+                    SelectedType.Eigendommen.Add(NewHuizen);
+                    KlantenRepository.AddWoning(NewHuizen);
+                    Huizen = KlantenRepository.GetHuizen();
+                    Status = LijstStatus.Toevoegen;
+                }
+                else
+                {
+                    MessageBox.Show("Selecteer een eigenaar voordat u een nieuw huis toevoegt.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
             catch (WoningException ex)
             {

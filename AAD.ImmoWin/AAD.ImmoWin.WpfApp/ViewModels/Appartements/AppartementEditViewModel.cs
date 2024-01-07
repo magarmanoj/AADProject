@@ -93,6 +93,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             }
         }
 
+
         public AppartementEditViewModel()
         {
             Title = "Aanpassen Appartementen";
