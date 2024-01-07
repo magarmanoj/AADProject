@@ -9,20 +9,32 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition ></RowDefinition>
-            <RowDefinition Height="200"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
 
         </Grid.RowDefinitions>
         <Label Content="{Binding Title}" Style="{StaticResource TitelLabel}"></Label>
-        <ListBox ItemsSource="{Binding Appartementen}" SelectedItem="{Binding GeselecteerdeAppartement}" Margin="5" Grid.Row="1"></ListBox>
-        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="5">
+            <Label Content="Zoek op:" VerticalAlignment="Center" IsEnabled="False" />
+            <TextBox Text="{Binding FilterText, UpdateSourceTrigger=PropertyChanged}" Width="200" VerticalAlignment="Center" TextAlignment="Left"/>
+            <Button Content="Sorteer op prijs" Command="{Binding SortByPriceCommand}" Margin="5"/>
+        </StackPanel>
+        <ListBox ItemsSource="{Binding FilteredAppartement}" SelectedItem="{Binding GeselecteerdeAppartement}" Margin="5" Grid.Row="2"></ListBox>
+
+        <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*" ></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto" ></RowDefinition>
+                    <RowDefinition Height="auto" ></RowDefinition>
+                    <RowDefinition Height="auto" ></RowDefinition>
+                    <RowDefinition Height="auto" ></RowDefinition>
+                    <RowDefinition Height="auto" ></RowDefinition>
+                    <RowDefinition Height="auto" ></RowDefinition>
+                    <RowDefinition Height="auto" ></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100" />
@@ -30,25 +42,20 @@
                     <ColumnDefinition Width="auto" />
                 </Grid.ColumnDefinitions>
                 <ComboBox  Grid.Row="0" ItemsSource="{Binding Klanten}" SelectedItem="{Binding SelectedType}" Margin="5" Grid.ColumnSpan="2"></ComboBox>
-                <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" Margin="5">
-                    <Label Content="Verdieping"></Label>
-                    <Label Content="Waarde"></Label>
-                    <Label Content="Straat"></Label>
-                    <Label Content="Nummer"></Label>
-                    <Label Content="Postnummer"></Label>
-                    <Label Content="Gemeente"></Label>
-                    <Label Content="BouwDatum"></Label>
-                </StackPanel>
-
-                <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Vertical" Margin="5">
-                    <TextBox Text="{Binding NewAppartement.Verdieping}" Margin="5" />
-                    <TextBox Text="{Binding NewAppartement.Waarde}" Margin="5" />
-                    <TextBox Text="{Binding NewAppartement.Adres.Straat}" Margin="5" />
-                    <TextBox Text="{Binding NewAppartement.Adres.Nummer}" Margin="5" />
-                    <TextBox Text="{Binding NewAppartement.Adres.Postnummer}" Margin="5" />
-                    <TextBox Text="{Binding NewAppartement.Adres.Gemeente}" Margin="5" />
-                    <DatePicker SelectedDate="{Binding NewAppartement.BouwDatum}" Margin="5" />
-                </StackPanel>
+                <Label Content="Verdieping" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Grid.Row="1"></Label>
+                <Label Content="Waarde" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Grid.Row="2"></Label>
+                <Label Content="Straat" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Grid.Row="3"></Label>
+                <Label Content="Nummer" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Grid.Row="4"></Label>
+                <Label Content="Postnummer" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Grid.Row="5"></Label>
+                <Label Content="Gemeente" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Grid.Row="6"></Label>
+                <Label Content="BouwDatum" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Grid.Row="7"></Label>
+                <TextBox Text="{Binding NewAppartement.Verdieping}"  VerticalAlignment="Center" Grid.Row="1" Margin="5" Grid.Column="1" />
+                <TextBox Text="{Binding NewAppartement.Waarde}"  VerticalAlignment="Center" Margin="5" Grid.Row="2" Grid.Column="1" />
+                <TextBox Text="{Binding NewAppartement.Adres.Straat}"  VerticalAlignment="Center" Grid.Row="3" Margin="5" Grid.Column="1" />
+                <TextBox Text="{Binding NewAppartement.Adres.Nummer}"  VerticalAlignment="Center" Grid.Row="4" Margin="5" Grid.Column="1" />
+                <TextBox Text="{Binding NewAppartement.Adres.Postnummer}"  VerticalAlignment="Center" Grid.Row="5" Margin="5" Grid.Column="1" />
+                <TextBox Text="{Binding NewAppartement.Adres.Gemeente}"  VerticalAlignment="Center" Grid.Row="6" Margin="5" Grid.Column="1" />
+                <DatePicker SelectedDate="{Binding NewAppartement.BouwDatum}"  VerticalAlignment="Center" Grid.Row="7" Margin="5" Grid.Column="1" />
             </Grid>
         </ScrollViewer>
 

@@ -22,7 +22,7 @@
                 <RowDefinition Height="auto"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="100" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Label Content="Verdieping:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Grid.Row="0" />
@@ -41,12 +41,12 @@
             <TextBox Text="{Binding Appartement.Adres.Nummer, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="5" Grid.Column="1" Grid.Row="3" />
             <TextBox Text="{Binding Appartement.Adres.Postnummer, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="5" Grid.Column="1" Grid.Row="4" />
             <TextBox Text="{Binding Appartement.Adres.Gemeente, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="5" Grid.Column="1" Grid.Row="5" />
-            <TextBox Text="{Binding Appartement.BouwDatum, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="5" Grid.Column="1" Grid.Row="6" />
+            <DatePicker SelectedDate="{Binding Appartement.BouwDatum}" VerticalAlignment="Center" Margin="5" Grid.Column="1" Grid.Row="6" />
             <StackPanel Grid.Column="1" Grid.Row="7" Orientation="Horizontal" Margin="5">
-                <TextBox Text="{Binding Appartement.Klant.Voornaam, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="5" Width="215" IsReadOnly="True"/>
-                <ComboBox ItemsSource="{Binding Klanten}" SelectedItem="{Binding SelectedType}" Margin="5" Width="215"/>
+                <TextBox Text="{Binding Appartement.Klant.Voornaam, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="5" Width="100" IsReadOnly="True" IsEnabled="False"/>
+                <ComboBox ItemsSource="{Binding Klanten}" SelectedItem="{Binding SelectedType}" Margin="5" Width="80"/>
             </StackPanel>
-            <TextBox Text="{Binding Appartement.Klant.Familienaam, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"  Margin="5" Grid.Column="1" Grid.Row="8" IsReadOnly="True"/>
+            <TextBox Text="{Binding Appartement.Klant.Familienaam, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"  Margin="5" Grid.Column="1" Grid.Row="8" IsReadOnly="True" IsEnabled="False"/>
         </Grid>
     </Grid>
 </UserControl>

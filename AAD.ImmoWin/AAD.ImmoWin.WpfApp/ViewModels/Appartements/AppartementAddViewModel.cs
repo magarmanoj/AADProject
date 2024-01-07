@@ -8,6 +8,7 @@ using Odisee.Common.Commands;
 using Odisee.Common.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 
 namespace AAD.ImmoWin.WpfApp.ViewModels
@@ -17,6 +18,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         public RelayCommand AppartementToevoegenCommand { get; set; }
         public RelayCommand AppartementWijzigenCommand { get; set; }
         public RelayCommand AppartementVerwijderenCommand { get; set; }
+        public RelayCommand SortByPriceCommand { get; set; }
 
 
         public Appartement NewAppartement { get; set; } = new Appartement();
@@ -104,6 +106,8 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             Appartementen = appartement;
             Klanten = KlantenRepository.GetKlanten();
             Status = LijstStatus.Tonen;
+            FilteredAppartement = appartement;
+            FilteredAppartement = KlantenRepository.GetAppartementen();
 
             NewAppartement = new Appartement
             {
@@ -114,8 +118,68 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             AppartementToevoegenCommand = new RelayCommand(AppartementToevoegenCommandExecute, AppartementToevoegenCommandCanExecute);
             AppartementWijzigenCommand = new RelayCommand(AppartementWijzigenCommandExecute, AppartementWijzigenCommandCanExecute);
             AppartementVerwijderenCommand = new RelayCommand(AppartementVerwijderenCommandExecute, AppartementVerwijderenCommandCanExecute);
+            SortByPriceCommand = new RelayCommand(SortByPrice);
         }
 
+        #region Sorteren
+        private bool isSortedDescending = false;
+
+        private void SortByPrice()
+        {
+            if (isSortedDescending)
+            {
+                FilteredAppartement = new List<Appartement>(FilteredAppartement.OrderBy(a => a.Waarde).ToList());
+            }
+            else
+            {
+                FilteredAppartement = new List<Appartement>(FilteredAppartement.OrderByDescending(a => a.Waarde).ToList());
+            }
+            isSortedDescending = !isSortedDescending;
+        }
+        #endregion
+
+        #region Filter
+        private string _filterText;
+        public string FilterText
+        {
+            get { return _filterText; }
+            set
+            {
+                SetProperty(ref _filterText, value);
+                FilterKlantenList();
+            }
+        }
+
+
+        private IEnumerable<Appartement> _filteredAppartement;
+        public IEnumerable<Appartement> FilteredAppartement
+        {
+            get { return _filteredAppartement; }
+            set { SetProperty(ref _filteredAppartement, value); }
+        }
+
+        private void FilterKlantenList()
+        {
+            if (string.IsNullOrWhiteSpace(FilterText))
+            {
+                FilteredAppartement = Appartementen;
+            }
+            else
+            {
+                string lowerCaseFilterText = FilterText.ToLowerInvariant();
+                FilteredAppartement = Appartementen.Where(a =>
+                    (a.Adres != null &&
+                     a.Adres.Straat != null && a.Adres.Straat.ToLowerInvariant().Contains(lowerCaseFilterText) ||
+                     a.Adres.Nummer != 0 && a.Adres.Nummer.ToString().Contains(lowerCaseFilterText) ||
+                     a.Adres.Postnummer != 0 && a.Adres.Postnummer.ToString().Contains(lowerCaseFilterText) ||
+                     a.Adres.Gemeente != null && a.Adres.Gemeente.ToLowerInvariant().Contains(lowerCaseFilterText)) ||
+                    a.Waarde.ToString().Contains(lowerCaseFilterText) ||
+                    a.Verdieping.ToString().Contains(lowerCaseFilterText));
+            }
+        }
+        #endregion
+
+        #region Command
         public void AppartementToevoegenCommandExecute()
         {
 
@@ -126,7 +190,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
                 {
                     SelectedType.Eigendommen.Add(NewAppartement);
                     KlantenRepository.AddWoning(NewAppartement);
-                    Appartementen = KlantenRepository.GetAppartementen();
+                    FilteredAppartement = KlantenRepository.GetAppartementen();
                     Status = LijstStatus.Toevoegen;
                 }
                 else
@@ -161,12 +225,13 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         private void AppartementVerwijderenCommandExecute()
         {
             KlantenRepository.RemoveWoningByID(GeselecteerdeAppartement.Id);
-            Appartementen = KlantenRepository.GetAppartementen();
+            FilteredAppartement = KlantenRepository.GetAppartementen();
             Status = LijstStatus.Verwijderen;
         }
         private Boolean AppartementVerwijderenCommandCanExecute()
         {
             return GeselecteerdeAppartement != null;
         }
+        #endregion
     }
 }

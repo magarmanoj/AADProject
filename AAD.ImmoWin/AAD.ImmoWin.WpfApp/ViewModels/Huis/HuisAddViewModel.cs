@@ -8,6 +8,7 @@ using Odisee.Common.Commands;
 using Odisee.Common.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 
 namespace AAD.ImmoWin.WpfApp.ViewModels
@@ -17,6 +18,8 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         public RelayCommand HuisToevoegenCommand { get; set; }
         public RelayCommand HuisWijzigenCommand { get; set; }
         public RelayCommand HuisVerwijderenCommand { get; set; }
+        public RelayCommand SortByPriceCommand { get; set; }
+
 
         public Huis NewHuizen { get; set; } = new Huis();
 
@@ -99,32 +102,92 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         }
         public HuisAddViewModel(List<Huis> Huis)
         {
-            Title = "Toevoegen Huisen";
+            Title = "Lijst Huisen";
             Huizen = Huis;
             Klanten = KlantenRepository.GetKlanten();
             NewHuizen = new Huis
             {
                 Adres = new Adres()
             };
+            FilteredHuizen = Huis;
+
             // Commands
             HuisToevoegenCommand = new RelayCommand(HuisToevoegenCommandExecute, HuisToevoegenCommandCanExecute);
             HuisWijzigenCommand = new RelayCommand(HuisWijzigenCommandExecute, HuisBewarenCommandCanExecute);
             HuisVerwijderenCommand = new RelayCommand(HuisVerwijderenCommandExecute, HuisVerwijderenCommandCanExecute);
+            SortByPriceCommand = new RelayCommand(SortByPrice);
             HuisSoort = Enums.GetDescriptions<Huistype>();
         }
 
+        #region Filter
+        private string _filterText;
+        public string FilterText
+        {
+            get { return _filterText; }
+            set
+            {
+                SetProperty(ref _filterText, value);
+                FilterKlantenList();
+            }
+        }
 
+
+        private IEnumerable<Huis> _filteredHuizen;
+        public IEnumerable<Huis> FilteredHuizen
+        {
+            get { return _filteredHuizen; }
+            set { SetProperty(ref _filteredHuizen, value); }
+        }
+
+        private void FilterKlantenList()
+        {
+            if (string.IsNullOrWhiteSpace(FilterText))
+            {
+                FilteredHuizen = Huizen;
+            }
+            else
+            {
+                string lowerCaseFilterText = FilterText.ToLowerInvariant();
+                FilteredHuizen = Huizen.Where(h =>
+                    (h.Adres != null &&
+                     h.Adres.Straat != null && h.Adres.Straat.ToLowerInvariant().Contains(lowerCaseFilterText) ||
+                     h.Adres.Nummer != 0 && h.Adres.Nummer.ToString().Contains(lowerCaseFilterText) ||
+                     h.Adres.Postnummer != 0 && h.Adres.Postnummer.ToString().Contains(lowerCaseFilterText) ||
+                     h.Adres.Gemeente != null && h.Adres.Gemeente.ToLowerInvariant().Contains(lowerCaseFilterText)) ||
+                    h.Waarde.ToString().Contains(lowerCaseFilterText) ||
+                    h.Type.ToString().ToLowerInvariant().Contains(lowerCaseFilterText));
+            }
+        }
+        #endregion
+
+        #region Sorteren
+        private bool isSortedDescending = false;
+        private void SortByPrice()
+        {
+            if (isSortedDescending)
+            {
+                FilteredHuizen = new List<Huis>(FilteredHuizen.OrderBy(a => a.Waarde).ToList());
+            }
+            else
+            {
+                FilteredHuizen = new List<Huis>(FilteredHuizen.OrderByDescending(a => a.Waarde).ToList());
+            }
+            isSortedDescending = !isSortedDescending;
+        }
+        #endregion
+
+        #region Commands
         public void HuisToevoegenCommandExecute()
         {
             try
             {
                 WoningenHuizenValidatie.ValidateHuizen(NewHuizen);
 
-                if(SelectedType != null)
+                if (SelectedType != null)
                 {
                     SelectedType.Eigendommen.Add(NewHuizen);
                     KlantenRepository.AddWoning(NewHuizen);
-                    Huizen = KlantenRepository.GetHuizen();
+                    FilteredHuizen = KlantenRepository.GetHuizen();
                     Status = LijstStatus.Toevoegen;
                 }
                 else
@@ -156,12 +219,13 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         private void HuisVerwijderenCommandExecute()
         {
             KlantenRepository.RemoveWoningByID(GeselecteerdeHuizen.Id);
-            Huizen = KlantenRepository.GetHuizen();
+            FilteredHuizen = KlantenRepository.GetHuizen();
             Status = LijstStatus.Verwijderen;
         }
         private Boolean HuisVerwijderenCommandCanExecute()
         {
             return GeselecteerdeHuizen != null;
         }
+        #endregion
     }
 }

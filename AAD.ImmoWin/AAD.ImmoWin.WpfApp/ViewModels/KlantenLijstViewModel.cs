@@ -96,6 +96,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             KlantWijzigenCommand = new RelayCommand(KlantWijzigenCommandExecute, KlantWijzigenCommandCanExecute);
             KlantVerwijderenCommand = new RelayCommand(KlantVerwijderenCommandExecute, KlantVerwijderenCommandCanExecute);
         }
+        #endregion
 
         #region Filter
         private string _filterText;
@@ -132,7 +133,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
                     k.Eigendommen.Count.ToString().Contains(lowerCaseFilterText));
             }
         }
-        #endregion
+
         #endregion
 
         #region Methods
