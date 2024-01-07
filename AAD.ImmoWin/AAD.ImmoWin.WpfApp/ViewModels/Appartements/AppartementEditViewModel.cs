@@ -70,6 +70,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         {
             Title = "Aanpassen Appartementen";
             IsEnabled = false;
+            Status = DetailStatus.Tonen;
             Appartementen = KlantenRepository.GetAppartementen();
             // Commands
             AppartementBewarenCommand = new RelayCommand(AppartementBewarenCommandExecute, AppartementBewarenCommandCanExecute);
@@ -81,6 +82,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             KlantenRepository.UpdateWoning(Appartement.Id, Appartement);
             Appartementen = KlantenRepository.GetAppartementen();
             IsEnabled = false;
+            Status = DetailStatus.Bewaren;
         }
         private Boolean AppartementBewarenCommandCanExecute()
         {
@@ -90,6 +92,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         private void AppartementAnnulerenCommandExecute()
         {
             IsEnabled = false;
+            Status = DetailStatus.Annuleren;
         }
     }
 }

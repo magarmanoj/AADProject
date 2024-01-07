@@ -14,21 +14,12 @@ namespace AAD.ImmoWin.Business.Services
 {
     public static class KlantenRepository
     {
-        private static Woningen _woningen;
         public static DataBaseContext context { get; set; }
         static KlantenRepository()
         {
             context = new DataBaseContext();
         }
 
-        public static Woningen GetWoningen()
-        {
-            List<Woning> woningenList = context.Woningen
-                    .Where(w => w is Appartement)
-                    .ToList();
-            _woningen = new Woningen(woningenList);
-            return _woningen;
-        }
         public static List<Klant> GetKlanten()
         {
             return context.Klanten.ToList();
@@ -66,6 +57,16 @@ namespace AAD.ImmoWin.Business.Services
             context.Woningen.Remove(woning as Woning);
             context.SaveChanges();
         }
+
+        public static void RemoveWoningByID(int id)
+        {
+            Woning woning = context.Woningen.FirstOrDefault(w => w.Id == id);
+            if (woning != null)
+            {
+                context.Woningen.Remove(woning);
+                context.SaveChanges();
+            }
+        }
         #endregion
 
         #region Klant
@@ -73,21 +74,27 @@ namespace AAD.ImmoWin.Business.Services
         {
             context.Klanten.Add(klant as Klant);
             context.SaveChanges();
+
             if (klant.Eigendommen != null && klant.Eigendommen.Any())
             {
                 List<Woning> woningenList = new List<Woning>();
 
-                for (int i = 0; i < klant.Eigendommen.Count; i++)
+                foreach (var eigendom in klant.Eigendommen)
                 {
-                    Woning e = (Woning)klant.Eigendommen[i];
-                    woningenList.Add(e);
+                    Woning woning = (Woning)eigendom;
+
+                    woning.KlantId = (klant as Klant).Id;
+
+                    woningenList.Add(woning);
                 }
+
                 context.Woningen.AddRange(woningenList);
                 context.SaveChanges();
             }
 
             return klant;
         }
+
 
 
         public static IKlant UpdateKlant(IKlant klant)
@@ -102,7 +109,22 @@ namespace AAD.ImmoWin.Business.Services
             context.Klanten.Remove(klant as Klant);
             context.SaveChanges();
         }
+
+        public static void RemoveKlantByID(int klantID)
+        {
+            Klant klant = context.Klanten.FirstOrDefault(k => k.Id == klantID);
+            if (klant != null)
+            {
+                context.Klanten.Remove(klant);
+                context.SaveChanges();
+            }
+        }
         #endregion
+
+        public static bool HeeftEigendommen(int id)
+        {
+            return context.Appartementen.Any(a => a.Klant.Id == id) || context.Huizen.Any(h => h.Klant.Id == id);
+        }
     }
 
 }

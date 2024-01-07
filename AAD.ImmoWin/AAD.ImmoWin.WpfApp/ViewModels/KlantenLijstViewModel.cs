@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace AAD.ImmoWin.WpfApp.ViewModels
@@ -109,7 +110,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         }
         private Boolean KlantToevoegenCommandCanExecute()
         {
-            return IsEnabled = true;
+            return true;
         }
 
         private void KlantWijzigenCommandExecute()
@@ -119,16 +120,31 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         }
         private Boolean KlantWijzigenCommandCanExecute()
         {
-            return GeselecteerdeKlant != null;
+            return GeselecteerdeKlant?.Changed ?? false;
         }
 
         private void KlantVerwijderenCommandExecute()
         {
-            KlantenRepository.RemoveKlant(GeselecteerdeKlant);
+            // Klant alleen kunnen verwijderen als die geen eigendommen heeft. 
+            if (GeselecteerdeKlant != null)
+            {
+                bool heeftEigendommen = KlantenRepository.HeeftEigendommen(GeselecteerdeKlant.Id);
+
+                if (heeftEigendommen)
+                {
+                    MessageBox.Show("Klant kan niet worden verwijderd omdat deze nog anderen eigendommen heeft.");
+                }
+                else
+                {
+                    // Proceed with customer deletion
+                    KlantenRepository.RemoveKlantByID(GeselecteerdeKlant.Id);
+                }
+            }
+            Klanten = KlantenRepository.GetKlanten();
         }
         private Boolean KlantVerwijderenCommandCanExecute()
         {
-            return GeselecteerdeKlant != null;
+            return GeselecteerdeKlant?.Changed ?? false;
         }
 
         #endregion

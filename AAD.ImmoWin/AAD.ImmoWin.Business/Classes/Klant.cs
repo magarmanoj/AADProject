@@ -7,6 +7,7 @@ using Odisee.Common.Observables;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.InteropServices;
+using System.Collections.Generic;
 
 namespace AAD.ImmoWin.Business.Classes
 {
@@ -20,11 +21,10 @@ namespace AAD.ImmoWin.Business.Classes
         private String _familienaam;
         private Woningen _eigendommen;
 
-
         #endregion
 
         #region Properties
-
+        public List<Woning> Woningen { get; set; }
         public String Voornaam
         {
             get { return _voornaam; }
@@ -45,10 +45,11 @@ namespace AAD.ImmoWin.Business.Classes
         }
 
         public Woningen Eigendommen
-        {
-            get { return _eigendommen; }
-            set { _eigendommen = value; }
-        }
+         {
+             get { return _eigendommen; }
+             set { _eigendommen = value; }
+         }
+
         #endregion
 
         #region Constructors
@@ -69,10 +70,18 @@ namespace AAD.ImmoWin.Business.Classes
         {
             Eigendommen = new Woningen();
             Eigendommen.CollectionChanged += Eigendommen_CollectionChanged;
+            Changed = false;
         }
 
         private void Eigendommen_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
+            if (e.NewItems != null)
+            {
+                foreach (Woning woning in e.NewItems)
+                {
+                    woning.KlantId = this.Id;
+                }
+            }
             OnPropertyChanged("Eigendommen");
         }
 

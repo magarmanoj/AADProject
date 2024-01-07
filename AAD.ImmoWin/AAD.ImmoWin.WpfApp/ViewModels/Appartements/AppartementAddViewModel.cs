@@ -101,6 +101,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             Title = "Toevoegen Appartementen";
             Appartementen = appartement;
             Klanten = KlantenRepository.GetKlanten();
+            Status = LijstStatus.Tonen;
 
             NewAppartement = new Appartement
             {
@@ -118,13 +119,13 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 
             SelectedType.Eigendommen.Add(NewAppartement);
             KlantenRepository.AddWoning(NewAppartement);
-            KlantenRepository.UpdateKlant(SelectedType);
             Appartementen = KlantenRepository.GetAppartementen();
+            Status= LijstStatus.Toevoegen;
 
         }
         private Boolean AppartementToevoegenCommandCanExecute()
         {
-            return IsEnabled = true;
+            return true;
         }
 
         private void AppartementWijzigenCommandExecute()
@@ -135,17 +136,18 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         }
         private Boolean AppartementWijzigenCommandCanExecute()
         {
-            return GeselecteerdeAppartement != null;
+            return GeselecteerdeAppartement?.Changed ?? false;
 
         }
         private void AppartementVerwijderenCommandExecute()
         {
-            KlantenRepository.RemoveWoning(GeselecteerdeAppartement);
-
+            KlantenRepository.RemoveWoningByID(GeselecteerdeAppartement.Id);
+            Appartementen = KlantenRepository.GetAppartementen();
+            Status = LijstStatus.Verwijderen;
         }
         private Boolean AppartementVerwijderenCommandCanExecute()
         {
-            return GeselecteerdeAppartement != null;
+            return GeselecteerdeAppartement?.Changed ?? false;
         }
     }
 }

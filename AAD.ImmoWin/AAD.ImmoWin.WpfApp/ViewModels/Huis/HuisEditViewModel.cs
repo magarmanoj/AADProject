@@ -67,6 +67,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         {
             Title = "Aanpassen Huizen";
             IsEnabled = false;
+            Status = DetailStatus.Tonen;
             WoningHuizen = KlantenRepository.GetHuizen();
 
             // Commands
@@ -79,6 +80,8 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             KlantenRepository.UpdateWoning(Huizen.Id, Huizen);
             WoningHuizen = KlantenRepository.GetHuizen();
             IsEnabled = false;
+            Status = DetailStatus.Bewaren;
+
         }
         private Boolean HuisBewarenCommandCanExecute()
         {
@@ -88,6 +91,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         private void HuisAnnulerenCommandExecute()
         {
             IsEnabled = false;
+            Status = DetailStatus.Annuleren;
         }
     }
 }

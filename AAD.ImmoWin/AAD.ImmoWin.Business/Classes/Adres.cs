@@ -2,6 +2,7 @@
 using System.Globalization;
 using AAD.ImmoWin.Business.Interfaces;
 using AAD.ImmoWin.Business.Exceptions;
+using System.Collections.Generic;
 
 namespace AAD.ImmoWin.Business.Classes
 {
@@ -16,7 +17,6 @@ namespace AAD.ImmoWin.Business.Classes
         #endregion
 
         #region Properties
-
         public String Straat
         {
             get { return _straat; }

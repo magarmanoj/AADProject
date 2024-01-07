@@ -5,6 +5,7 @@ using AAD.ImmoWin.Business.Exceptions;
 using Odisee.Common.Observables;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace AAD.ImmoWin.Business.Classes
 {
@@ -12,12 +13,15 @@ namespace AAD.ImmoWin.Business.Classes
     public abstract class Woning : ObservableObject, IWoning
     {
         #region Fields
-        [Key]
         public int Id { get; set; }
         private Adres _adres;
         private DateTime? _bouwDatum;
         private Decimal? _waarde;
 
+        public int KlantId { get; set; } // Foreign key to Klant
+
+        [ForeignKey("KlantId")]
+        public Klant Klant { get; set; }
         public Decimal? Waarde
         {
             get { return _waarde; }

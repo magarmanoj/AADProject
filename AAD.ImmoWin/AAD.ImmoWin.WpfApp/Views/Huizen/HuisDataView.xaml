@@ -32,7 +32,8 @@
                 <TextBox Text="{Binding Huizen.Adres.Nummer, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
                 <TextBox Text="{Binding Huizen.Adres.Postnummer, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
                 <TextBox Text="{Binding Huizen.Adres.Gemeente, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
-                <!-- Add other textboxes as needed -->
+                <TextBox Text="{Binding Huizen.Klant.Voornaam, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
+                <TextBox Text="{Binding Huizen.Klant.Familienaam, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
             </StackPanel>
         </Grid>
     </Grid>

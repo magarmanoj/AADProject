@@ -44,8 +44,8 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             }
         }
 
-        private string _selectedType;
-        public string SelectedType
+        private Klant _selectedType;
+        public Klant SelectedType
         {
             get { return _selectedType; }
             set
@@ -114,12 +114,14 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 
         public void HuisToevoegenCommandExecute()
         {
+            SelectedType.Eigendommen.Add(NewHuizen);
             KlantenRepository.AddWoning(NewHuizen);
             Huizen = KlantenRepository.GetHuizen();
+            Status = LijstStatus.Toevoegen;
         }
         private Boolean HuisToevoegenCommandCanExecute()
         {
-            return IsEnabled = true;
+            return true;
         }
 
         private void HuisWijzigenCommandExecute()
@@ -129,13 +131,14 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         }
         private Boolean HuisBewarenCommandCanExecute()
         {
-            return GeselecteerdeHuizen != null;
+            return GeselecteerdeHuizen?.Changed ?? false;
 
         }
         private void HuisVerwijderenCommandExecute()
         {
-            KlantenRepository.RemoveWoning(GeselecteerdeHuizen);
-
+            KlantenRepository.RemoveWoningByID(GeselecteerdeHuizen.Id);
+            Huizen = KlantenRepository.GetHuizen();
+            Status = LijstStatus.Verwijderen;
         }
         private Boolean HuisVerwijderenCommandCanExecute()
         {

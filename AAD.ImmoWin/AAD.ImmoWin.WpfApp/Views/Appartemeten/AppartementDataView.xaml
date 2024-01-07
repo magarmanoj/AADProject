@@ -35,7 +35,7 @@
                 <TextBox Text="{Binding Appartement.Adres.Gemeente, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
                 <TextBox Text="{Binding Appartement.BouwDatum, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
                 <TextBox Text="{Binding Appartement.Klant.Voornaam, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
-                <TextBox Text="{Binding Appartement.BouwDatum, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
+                <TextBox Text="{Binding Appartement.Klant.Familienaam, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
 
                 
             </StackPanel>
