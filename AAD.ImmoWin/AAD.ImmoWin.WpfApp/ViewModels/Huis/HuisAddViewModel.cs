@@ -126,8 +126,8 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             get { return _filterText; }
             set
             {
-                SetProperty(ref _filterText, value);
-                FilterKlantenList();
+              SetProperty(ref _filterText, value);
+                FilterHuizenList();
             }
         }
 
@@ -139,7 +139,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             set { SetProperty(ref _filteredHuizen, value); }
         }
 
-        private void FilterKlantenList()
+        private void FilterHuizenList()
         {
             if (string.IsNullOrWhiteSpace(FilterText))
             {
@@ -187,7 +187,8 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
                 {
                     SelectedType.Eigendommen.Add(NewHuizen);
                     KlantenRepository.AddWoning(NewHuizen);
-                    FilteredHuizen = KlantenRepository.GetHuizen();
+                    Huizen = KlantenRepository.GetHuizen();
+                    FilterHuizenList();
                     Status = LijstStatus.Toevoegen;
                 }
                 else

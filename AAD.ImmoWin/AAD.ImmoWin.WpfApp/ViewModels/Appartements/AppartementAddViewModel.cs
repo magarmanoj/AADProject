@@ -107,8 +107,6 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             Klanten = KlantenRepository.GetKlanten();
             Status = LijstStatus.Tonen;
             FilteredAppartement = appartement;
-            FilteredAppartement = KlantenRepository.GetAppartementen();
-
             NewAppartement = new Appartement
             {
                 Adres = new Adres(),
@@ -146,7 +144,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             set
             {
                 SetProperty(ref _filterText, value);
-                FilterKlantenList();
+                FilterAppartementList();
             }
         }
 
@@ -158,7 +156,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             set { SetProperty(ref _filteredAppartement, value); }
         }
 
-        private void FilterKlantenList()
+        private void FilterAppartementList()
         {
             if (string.IsNullOrWhiteSpace(FilterText))
             {
@@ -190,7 +188,8 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
                 {
                     SelectedType.Eigendommen.Add(NewAppartement);
                     KlantenRepository.AddWoning(NewAppartement);
-                    FilteredAppartement = KlantenRepository.GetAppartementen();
+                    Appartementen = KlantenRepository.GetAppartementen();
+                    FilterAppartementList();
                     Status = LijstStatus.Toevoegen;
                 }
                 else
