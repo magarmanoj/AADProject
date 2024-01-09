@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Classes\Adres.cs" />
     <Compile Include="Classes\DataBaseContext.cs" />
+    <Compile Include="Classes\DropCreateAADImmoWinContextifModelChanges.cs" />
     <Compile Include="Classes\Klanten.cs" />
     <Compile Include="Classes\Woningen.cs" />
     <Compile Include="Exceptions\AdresExceptions.cs" />

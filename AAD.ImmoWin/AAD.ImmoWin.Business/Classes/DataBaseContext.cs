@@ -16,7 +16,7 @@ namespace AAD.ImmoWin.Business.Classes
 
         public DataBaseContext() : base("dbImmoWin") 
         {
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<DataBaseContext>());
+            Database.SetInitializer(new DropCreateImmoWinContextifModelChanges());
         }
     }
 }

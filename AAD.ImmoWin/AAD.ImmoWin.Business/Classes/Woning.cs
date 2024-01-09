@@ -18,6 +18,7 @@ namespace AAD.ImmoWin.Business.Classes
         private DateTime? _bouwDatum;
         private Decimal? _waarde;
 
+        [ForeignKey("Klant")]
         public int KlantId { get; set; } 
 
         public Klant Klant { get; set; }

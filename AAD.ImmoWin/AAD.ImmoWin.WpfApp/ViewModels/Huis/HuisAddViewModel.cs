@@ -219,6 +219,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         }
         private void HuisVerwijderenCommandExecute()
         {
+            GeselecteerdeHuizen.Klant.Eigendommen.Remove(GeselecteerdeHuizen);
             KlantenRepository.RemoveWoningByID(GeselecteerdeHuizen.Id);
             FilteredHuizen = KlantenRepository.GetHuizen();
             Status = LijstStatus.Verwijderen;

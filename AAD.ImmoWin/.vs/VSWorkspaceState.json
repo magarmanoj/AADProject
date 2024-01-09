@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\AAD.ImmoWin.WpfApp",
-    "\\AAD.ImmoWin.WpfApp\\ViewModels"
+    "\\AAD.ImmoWin.WpfApp\\ViewModels",
+    "\\AAD.ImmoWin.WpfApp\\ViewModels\\Huis"
   ],
-  "SelectedNode": "\\AAD.ImmoWin.sln",
+  "SelectedNode": "\\AAD.ImmoWin.WpfApp\\ViewModels\\Huis\\HuisAddViewModel.cs",
   "PreviewInSolutionExplorer": false
 }

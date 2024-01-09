@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Release\
+C:\Users\ManojM\Desktop\school\AADProject\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Release\
 AAD.ImmoWin.WpfApp
 none
 false
 TRACE
-E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.WpfApp\App.xaml
-598151160
+C:\Users\ManojM\Desktop\school\AADProject\AAD.ImmoWin\AAD.ImmoWin.WpfApp\App.xaml
+13845771860
 
-151288459717
-15-1560853422
-Views\HoofdView.xaml;Views\KlantDetailCommandView.xaml;Views\KlantDetailView.xaml;Views\KlantenLijstView.xaml;Views\KlantenModuleView.xaml;
+29498430820
+18-159163527
+Views\Appartemeten\AppartementAddView.xaml;Views\Appartemeten\AppartementDataView.xaml;Views\Appartemeten\AppartementEditView.xaml;Views\Appartemeten\AppartementView.xaml;Views\HoofdView.xaml;Views\Huizen\HuisAddView.xaml;Views\Huizen\HuisDataView.xaml;Views\Huizen\HuisEditView.xaml;Views\Huizen\HuisView.xaml;Views\KlantDetailCommandView.xaml;Views\KlantDetailView.xaml;Views\KlantenLijstView.xaml;Views\KlantenModuleView.xaml;
 
 True
 

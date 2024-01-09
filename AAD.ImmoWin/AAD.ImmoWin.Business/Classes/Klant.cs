@@ -45,7 +45,7 @@ namespace AAD.ImmoWin.Business.Classes
         public Woningen Eigendommen
          {
              get { return _eigendommen; }
-             set { _eigendommen = value; }
+             private set { _eigendommen = value; }
          }
 
         #endregion

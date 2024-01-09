@@ -119,6 +119,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             SortByPriceCommand = new RelayCommand(SortByPrice);
         }
 
+
         #region Sorteren
         private bool isSortedDescending = false;
 
@@ -223,6 +224,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         }
         private void AppartementVerwijderenCommandExecute()
         {
+            GeselecteerdeAppartement.Klant.Eigendommen.Remove(GeselecteerdeAppartement);
             KlantenRepository.RemoveWoningByID(GeselecteerdeAppartement.Id);
             FilteredAppartement = KlantenRepository.GetAppartementen();
             Status = LijstStatus.Verwijderen;
