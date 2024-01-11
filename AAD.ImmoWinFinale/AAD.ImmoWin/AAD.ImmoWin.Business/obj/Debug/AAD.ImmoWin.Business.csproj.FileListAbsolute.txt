@@ -1,0 +1,72 @@
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V01\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.csproj.AssemblyReference.cache
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V01\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.csproj.CoreCompileInputs.cache
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V01\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\AAD.ImmoWin.Business.dll
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V01\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\AAD.ImmoWin.Business.pdb
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V01\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.dll
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V01\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.pdb
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V02 - Exceptions\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\AAD.ImmoWin.Business.dll
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V02 - Exceptions\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\AAD.ImmoWin.Business.pdb
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V02 - Exceptions\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.csproj.AssemblyReference.cache
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V02 - Exceptions\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.csproj.CoreCompileInputs.cache
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V02 - Exceptions\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.dll
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V02 - Exceptions\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.pdb
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V05 -\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\AAD.ImmoWin.Business.dll
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V05 -\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\AAD.ImmoWin.Business.pdb
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V05 -\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\Odisee.Common.dll
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V05 -\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\Odisee.Common.pdb
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V05 -\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.csproj.AssemblyReference.cache
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V05 -\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.csproj.CoreCompileInputs.cache
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V05 -\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.csproj.CopyComplete
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V05 -\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.dll
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V05 -\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.pdb
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V05 - FullObservableCollection\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\AAD.ImmoWin.Business.dll
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V05 - FullObservableCollection\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\AAD.ImmoWin.Business.pdb
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V05 - FullObservableCollection\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\Odisee.Common.dll
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V05 - FullObservableCollection\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\Odisee.Common.pdb
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V05 - FullObservableCollection\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.csproj.AssemblyReference.cache
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V05 - FullObservableCollection\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.csproj.CoreCompileInputs.cache
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V05 - FullObservableCollection\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.csproj.CopyComplete
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V05 - FullObservableCollection\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.dll
+C:\Users\serge.vancleynenbreu\OneDrive - ODISEE\2023-2024\@Cursus\AAD\Projects\V05 - FullObservableCollection\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.pdb
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\AAD.ImmoWin.Business.dll
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\AAD.ImmoWin.Business.pdb
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\Odisee.Common.dll
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\Odisee.Common.pdb
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.csproj.AssemblyReference.cache
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.csproj.CoreCompileInputs.cache
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.csproj.CopyComplete
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.dll
+C:\AAD - ImmoWin\ImmoWin\V06 - MVVM - b - WIP\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.pdb
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\AAD.ImmoWin.Business.dll
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\AAD.ImmoWin.Business.pdb
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\Odisee.Common.dll
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\Odisee.Common.pdb
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.csproj.AssemblyReference.cache
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.csproj.CoreCompileInputs.cache
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.csproj.CopyComplete
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.dll
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.pdb
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\AAD.ImmoWin.Business.dll.config
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\EntityFramework.dll
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\EntityFramework.SqlServer.dll
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\EntityFramework.xml
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\EntityFramework.SqlServer.xml
+E:\School\2de jaar\AAD\ImmoWin-Communicatie tussen ViewModels\via Events\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\Odisee.Common.dll.config
+C:\Users\ManojM\Downloads\AAD.ImmoWinTEST\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\AAD.ImmoWin.Business.dll.config
+C:\Users\ManojM\Downloads\AAD.ImmoWinTEST\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\AAD.ImmoWin.Business.dll
+C:\Users\ManojM\Downloads\AAD.ImmoWinTEST\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\AAD.ImmoWin.Business.pdb
+C:\Users\ManojM\Downloads\AAD.ImmoWinTEST\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\EntityFramework.dll
+C:\Users\ManojM\Downloads\AAD.ImmoWinTEST\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ManojM\Downloads\AAD.ImmoWinTEST\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\Odisee.Common.dll
+C:\Users\ManojM\Downloads\AAD.ImmoWinTEST\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\Odisee.Common.pdb
+C:\Users\ManojM\Downloads\AAD.ImmoWinTEST\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\Odisee.Common.dll.config
+C:\Users\ManojM\Downloads\AAD.ImmoWinTEST\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\EntityFramework.xml
+C:\Users\ManojM\Downloads\AAD.ImmoWinTEST\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ManojM\Downloads\AAD.ImmoWinTEST\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.csproj.AssemblyReference.cache
+C:\Users\ManojM\Downloads\AAD.ImmoWinTEST\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.csproj.CoreCompileInputs.cache
+C:\Users\ManojM\Downloads\AAD.ImmoWinTEST\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.csproj.CopyComplete
+C:\Users\ManojM\Downloads\AAD.ImmoWinTEST\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.dll
+C:\Users\ManojM\Downloads\AAD.ImmoWinTEST\AAD.ImmoWin\AAD.ImmoWin.Business\obj\Debug\AAD.ImmoWin.Business.pdb
+C:\Users\ManojM\Downloads\AAD.ImmoWinTEST\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\AAD.ImmoWin.Data.dll
+C:\Users\ManojM\Downloads\AAD.ImmoWinTEST\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\AAD.ImmoWin.Data.pdb
+C:\Users\ManojM\Downloads\AAD.ImmoWinTEST\AAD.ImmoWin\AAD.ImmoWin.Business\bin\Debug\AAD.ImmoWin.Data.dll.config
