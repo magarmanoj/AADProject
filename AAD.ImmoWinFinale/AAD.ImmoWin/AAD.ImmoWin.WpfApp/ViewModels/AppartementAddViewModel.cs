@@ -20,6 +20,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         public RelayCommand AppartementWijzigenCommand { get; set; }
         public RelayCommand AppartementVerwijderenCommand { get; set; }
         public RelayCommand SortByPriceCommand { get; set; }
+        public RelayCommand LijstVernieuwenCommand { get; set; }
 
 
         public Data.Data.Appartement NewAppartement { get; set; } = new Data.Data.Appartement();
@@ -116,6 +117,8 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             AppartementToevoegenCommand = new RelayCommand(AppartementToevoegenCommandExecute, AppartementToevoegenCommandCanExecute);
             AppartementWijzigenCommand = new RelayCommand(AppartementWijzigenCommandExecute, AppartementWijzigenCommandCanExecute);
             AppartementVerwijderenCommand = new RelayCommand(AppartementVerwijderenCommandExecute, AppartementVerwijderenCommandCanExecute);
+            LijstVernieuwenCommand = new RelayCommand(LijstVernieuwenCommandExecute);
+
             SortByPriceCommand = new RelayCommand(SortByPrice);
         }
 
@@ -200,7 +203,27 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
                     MessageBox.Show("Selecteer een eigenaar voordat u een nieuw appartement toevoegt.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
-            catch (WoningException ex)
+            catch (WaardeTeKlein_WoningException ex)
+            {
+                MessageBox.Show(ex.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (StraatLeeg_AdresException ex)
+            {
+                MessageBox.Show(ex.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (NummerTeKlein_AdresException ex)
+            {
+                MessageBox.Show(ex.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (PostnummerTeKlein_AdresException ex)
+            {
+                MessageBox.Show(ex.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (GemeenteLeeg_AdresException ex)
+            {
+                MessageBox.Show(ex.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (BouwdatumTeGroot_WoningException ex)
             {
                 MessageBox.Show(ex.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
@@ -224,17 +247,21 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         private void AppartementVerwijderenCommandExecute()
         {
             GeselecteerdeAppartement.Klant.Eigendommen.Remove(GeselecteerdeAppartement);
-            Data.Services.WoningRepository.RemoveWoningByID(GeselecteerdeAppartement.Id);
-            GeselecteerdeAppartement = null;
-            Appartementen = Data.Services.WoningRepository.GetAppartementen();
+            Data.Services.WoningRepository.RemoveWoning(GeselecteerdeAppartement);
+            FilteredAppartement = Data.Services.WoningRepository.GetAppartementen();
             Klanten = Data.Services.KlantenRepository.GetKlanten();
-            OnPropertyChanged(nameof(Appartementen));
-            OnPropertyChanged(nameof(Klanten));
+            OnPropertyChanged(nameof(Klanten)); 
             Status = KlantLijstStatus.Verwijderen;
         }
         private Boolean AppartementVerwijderenCommandCanExecute()
         {
             return GeselecteerdeAppartement != null;
+        }
+
+        private void LijstVernieuwenCommandExecute()
+        {
+            FilteredAppartement = Data.Services.WoningRepository.GetAppartementen();
+            FilterAppartementList();
         }
         #endregion
     }

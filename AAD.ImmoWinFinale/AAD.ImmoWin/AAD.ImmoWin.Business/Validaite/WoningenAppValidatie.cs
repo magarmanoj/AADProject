@@ -22,11 +22,11 @@ namespace AAD.ImmoWin.Business.Validatie
             {
                 throw new GemeenteLeeg_AdresException();
             }
-            if (app.Verdieping < 0)
+            if (app.Verdieping < 0 || appartement.Waarde < 0)
             {
                 throw new WaardeTeKlein_WoningException();
             }
-            if (appartement.Waarde < 0)
+            if (appartement.Waarde <= 0 || appartement.Waarde == null)
             {
                 throw new WaardeTeKlein_WoningException();
             }

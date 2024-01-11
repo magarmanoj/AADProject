@@ -102,6 +102,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             IsEnabled = false;
             Status = KlantDetailStatus.Bewaren;
             Data.Services.KlantenRepository.UpdateKlantByID(Klant.Id, Klant);
+            Klanten = Data.Services.KlantenRepository.GetKlanten();
 
         }
         private Boolean KlantWijzigingBewarenCommandCanExecute()

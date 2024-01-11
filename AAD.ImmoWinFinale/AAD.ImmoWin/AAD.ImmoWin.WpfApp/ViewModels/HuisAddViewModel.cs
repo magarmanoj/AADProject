@@ -20,6 +20,7 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         public RelayCommand HuisToevoegenCommand { get; set; }
         public RelayCommand HuisWijzigenCommand { get; set; }
         public RelayCommand HuisVerwijderenCommand { get; set; }
+        public RelayCommand LijstVernieuwenCommand { get; set; }
         public RelayCommand SortByPriceCommand { get; set; }
 
 
@@ -120,6 +121,8 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             HuisVerwijderenCommand = new RelayCommand(HuisVerwijderenCommandExecute, HuisVerwijderenCommandCanExecute);
             SortByPriceCommand = new RelayCommand(SortByPrice);
             HuisSoort = Enums.GetDescriptions<Huistype>();
+            LijstVernieuwenCommand = new RelayCommand(LijstVernieuwenCommandExecute);
+
         }
 
         #region Filter
@@ -199,7 +202,27 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
                     MessageBox.Show("Selecteer een eigenaar voordat u een nieuw huis toevoegt.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
-            catch (WoningException ex)
+            catch (WaardeTeKlein_WoningException ex)
+            {
+                MessageBox.Show(ex.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (StraatLeeg_AdresException ex)
+            {
+                MessageBox.Show(ex.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (NummerTeKlein_AdresException ex)
+            {
+                MessageBox.Show(ex.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (PostnummerTeKlein_AdresException ex)
+            {
+                MessageBox.Show(ex.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (GemeenteLeeg_AdresException ex)
+            {
+                MessageBox.Show(ex.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (BouwdatumTeGroot_WoningException ex)
             {
                 MessageBox.Show(ex.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
@@ -223,13 +246,19 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         private void HuisVerwijderenCommandExecute()
         {
             GeselecteerdeHuizen.Klant.Eigendommen.Remove(GeselecteerdeHuizen);
-            Data.Services.WoningRepository.RemoveWoningByID(GeselecteerdeHuizen.Id);
+            Data.Services.WoningRepository.RemoveWoning(GeselecteerdeHuizen);
             FilteredHuizen = Data.Services.WoningRepository.GetHuizen();
             Status = KlantLijstStatus.Verwijderen;
         }
         private Boolean HuisVerwijderenCommandCanExecute()
         {
             return GeselecteerdeHuizen != null;
+        }
+
+        private void LijstVernieuwenCommandExecute()
+        {
+            FilteredHuizen = Data.Services.WoningRepository.GetHuizen();
+            FilterHuizenList();
         }
         #endregion
     }

@@ -89,12 +89,13 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
 			Klanten = klanten;
 			Status = KlantLijstStatus.Tonen;
 			FilteredKlanten = Klanten;
+            Klanten = KlantenRepository.GetKlanten();
 
 			// Commands
 			KlantToevoegenCommand = new RelayCommand(KlantToevoegenCommandExecute, KlantToevoegenCommandCanExecute);
 			KlantWijzigenCommand = new RelayCommand(KlantWijzigenCommandExecute, KlantWijzigenCommandCanExecute);
 			KlantVerwijderenCommand = new RelayCommand(KlantVerwijderenCommandExecute, KlantVerwijderenCommandCanExecute);
-		}
+        }
 
         #endregion
 
@@ -108,16 +109,16 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
                 KlantenValidatie.ValidateKlant(NewKlanten);
 
                 KlantenRepository.AddKlant(NewKlanten);
-                Klanten = KlantenRepository.GetKlanten();
+                FilteredKlanten = KlantenRepository.GetKlanten();
                 Status = KlantLijstStatus.Toevoegen;
             }
 			catch (NaamLeeg_KlantException ex)
 			{
                 MessageBox.Show(ex.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-
         }
-		private Boolean KlantToevoegenCommandCanExecute()
+
+        private Boolean KlantToevoegenCommandCanExecute()
 		{
             return true;
         }
@@ -148,19 +149,21 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
                     KlantenRepository.RemoveKlantByID(GeselecteerdeKlant.Id);
                 }
             }
-			Klanten = KlantenRepository.GetKlanten();
+            FilteredKlanten = KlantenRepository.GetKlanten();
         }
 		private Boolean KlantVerwijderenCommandCanExecute()
 		{
 			return GeselecteerdeKlant != null;
 		}
 
-		#endregion
 
-		#endregion
 
-		#region Filter
-		private string _filterText;
+        #endregion
+
+        #endregion
+
+        #region Filter
+        private string _filterText;
         public string FilterText
         {
             get { return _filterText; }

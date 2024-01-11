@@ -19,6 +19,11 @@
             <MenuItem Header="_Bestand">
                 <MenuItem Header="E_xit" Command="{Binding ExitCommand}"></MenuItem>
             </MenuItem>
+            <MenuItem Header="Data">
+                <MenuItem Header="LegeData" Command="{Binding LegeDataCommand }"></MenuItem>
+                <MenuItem Header="InitielData" Command="{Binding InitieleDataCommand }"></MenuItem>
+                <MenuItem Header="HuidigeData" Command="{Binding HuidigeDataCommand }"></MenuItem>
+            </MenuItem>
             <MenuItem Header="_Gegevens">
                 <MenuItem Header="_Klanten module" Command="{Binding KlantenModuleCommand}"></MenuItem>
                 <MenuItem Header="_Appartment module" Command="{Binding AppartementModuleCommand}"></MenuItem>

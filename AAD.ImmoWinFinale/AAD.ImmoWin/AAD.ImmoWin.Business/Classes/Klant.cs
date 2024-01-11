@@ -73,6 +73,8 @@ namespace AAD.ImmoWin.Business.Classes
             get { return _voornaam; }
             set
             {
+                if (String.IsNullOrEmpty(value))
+                    throw new NaamLeeg_KlantException();
                 SetProperty(ref _voornaam, value);
             }
         }

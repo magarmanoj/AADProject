@@ -1,4 +1,5 @@
-﻿using Odisee.Common.Commands;
+﻿using AAD.ImmoWin.Data.Data;
+using Odisee.Common.Commands;
 using Odisee.Common.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,9 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
         public RelayCommand KlantenModuleCommand { get; }
         public RelayCommand AppartementModuleCommand { get; }
         public RelayCommand HuisModuleCommand { get; }
+        public RelayCommand LegeDataCommand { get; private set; }
+        public RelayCommand InitieleDataCommand { get; private set; }
+        public RelayCommand HuidigeDataCommand { get; private set; }
 
         #endregion
 
@@ -50,13 +54,34 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
             KlantenModuleCommand = new RelayCommand(KlantenModuleCommandExecute, KlantenModuleCommandCanExecute);
             AppartementModuleCommand = new RelayCommand(AppartementModuleCommandExecute, AppartementModuleCommandCanExecute);
             HuisModuleCommand = new RelayCommand(HuisModuleCommandExecute, HuisModuleCommandCanExecute);
-
+            LegeDataCommand = new RelayCommand(LegeDataCommandExecute);
+            InitieleDataCommand = new RelayCommand(InitieleDataCommandExecute);
+            HuidigeDataCommand = new RelayCommand(HuidigeDataCommandExecute);
         }
 
         #endregion
 
         #region Methods
 
+        private void LegeDataCommandExecute()
+        {
+            using (DataBaseContext context = new DataBaseContext())
+            {
+                ConnectionRepository.ClearDataBase(context);
+            }
+        }
+
+        private void InitieleDataCommandExecute()
+        {
+            using (DataBaseContext context = new DataBaseContext())
+            {
+                ConnectionRepository.Seed(context);
+            }
+        }
+
+        private void HuidigeDataCommandExecute()
+        {
+        }
         #region Command methods
 
         private void ExitCommandExecute()

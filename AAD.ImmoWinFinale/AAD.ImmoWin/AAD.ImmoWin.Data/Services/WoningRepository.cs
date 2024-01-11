@@ -50,15 +50,9 @@ namespace AAD.ImmoWin.Data.Services
                 context.SaveChanges();
             }
         }
+
         public static void RemoveWoning(Woning woning)
         {
-            context.Woningen.Remove(woning as Woning);
-            context.SaveChanges();
-        }
-
-        public static void RemoveWoningByID(int id)
-        {
-            Woning woning = context.Woningen.FirstOrDefault(w => w.Id == id);
             if (woning != null)
             {
                 Adres adres = woning.Adres;
@@ -73,6 +67,7 @@ namespace AAD.ImmoWin.Data.Services
                 context.SaveChanges();
             }
         }
+
     }
 
 }

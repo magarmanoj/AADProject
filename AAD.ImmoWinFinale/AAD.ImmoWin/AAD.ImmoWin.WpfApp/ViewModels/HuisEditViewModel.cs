@@ -119,7 +119,27 @@ namespace AAD.ImmoWin.WpfApp.ViewModels
                     Data.Services.KlantenRepository.UpdateKlantByID(SelectedType.Id, SelectedType);
                 }
             }
-            catch (WoningException ex)
+            catch (WaardeTeKlein_WoningException ex)
+            {
+                MessageBox.Show(ex.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (StraatLeeg_AdresException ex)
+            {
+                MessageBox.Show(ex.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (NummerTeKlein_AdresException ex)
+            {
+                MessageBox.Show(ex.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (PostnummerTeKlein_AdresException ex)
+            {
+                MessageBox.Show(ex.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (GemeenteLeeg_AdresException ex)
+            {
+                MessageBox.Show(ex.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (BouwdatumTeGroot_WoningException ex)
             {
                 MessageBox.Show(ex.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }

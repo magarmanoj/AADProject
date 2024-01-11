@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\ManojM\Desktop\school\AADProject\AAD.ImmoWinTEST\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\
+C:\Users\ManojM\Desktop\school\AADProject\AAD.ImmoWinFinale\AAD.ImmoWin\AAD.ImmoWin.WpfApp\obj\Debug\
 AAD.ImmoWin.WpfApp
 none
 false
 DEBUG;TRACE
-C:\Users\ManojM\Desktop\school\AADProject\AAD.ImmoWinTEST\AAD.ImmoWin\AAD.ImmoWin.WpfApp\App.xaml
+C:\Users\ManojM\Desktop\school\AADProject\AAD.ImmoWinFinale\AAD.ImmoWin\AAD.ImmoWin.WpfApp\App.xaml
 13-1793761224
 
 29-116463871
-19256977157
+19-759029216
 Views\AppartementAddView.xaml;Views\AppartementDataView.xaml;Views\AppartementEditView.xaml;Views\AppartementView.xaml;Views\HoofdView.xaml;Views\HuisAddView.xaml;Views\HuisDataView.xaml;Views\HuisEditView.xaml;Views\HuisView.xaml;Views\KlantDetailCommandView.xaml;Views\KlantDetailView.xaml;Views\KlantenLijstView.xaml;Views\KlantenModuleView.xaml;
 
 False

@@ -21,6 +21,7 @@
             <Label Content="Zoek op:" VerticalAlignment="Center" IsEnabled="False" />
             <TextBox Text="{Binding FilterText, UpdateSourceTrigger=PropertyChanged}" Width="200" VerticalAlignment="Center" TextAlignment="Left"/>
             <Button Content="Sorteer op prijs" Command="{Binding SortByPriceCommand}" Margin="5"/>
+            <Button Content="Vernieuwen" Command="{Binding LijstVernieuwenCommand}" Margin="5"></Button>
         </StackPanel>
         <ListBox ItemsSource="{Binding FilteredAppartement}" SelectedItem="{Binding GeselecteerdeAppartement}" Margin="5" Grid.Row="2"></ListBox>
 
